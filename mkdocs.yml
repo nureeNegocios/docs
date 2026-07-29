@@ -1,0 +1,64 @@
+site_name: Nuree · Documentação de Engenharia
+site_description: Do requisito à implementação e aos testes — documentação viva dos produtos Nuree.
+site_url: https://nureenegocios.github.io/docs/
+repo_url: https://github.com/nureeNegocios/docs
+repo_name: nureeNegocios/docs
+edit_uri: edit/main/docs/
+copyright: Nuree Negócios
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: modo claro
+  font:
+    text: DM Sans
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Início: index.md
+  - Convenções:
+      - Escrita de requisitos: convencoes/requisitos.md
+  - app-nuree:
+      - Visão geral: app-nuree/index.md
+      - Requisitos: app-nuree/requisitos.md

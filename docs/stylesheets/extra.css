@@ -1,0 +1,27 @@
+/* Paleta Nuree */
+:root {
+  --nuree-navy: #081D35;
+  --nuree-verde: #1E8A70;
+  --nuree-flor: #B62269;
+  --nuree-creme: #FAF9F5;
+
+  --md-primary-fg-color: #1E8A70;
+  --md-primary-fg-color--light: #2aa588;
+  --md-primary-fg-color--dark: #081D35;
+  --md-accent-fg-color: #B62269;
+  --md-default-bg-color: #FAF9F5;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #2aa588;
+  --md-accent-fg-color: #d64d8c;
+  --md-default-bg-color: #081D35;
+}
+
+/* Chips de metadados de requisito */
+.req-meta code {
+  font-size: 0.72rem;
+  background: rgba(30, 138, 112, 0.10);
+  color: var(--nuree-navy);
+  border: 1px solid rgba(30, 138, 112, 0.25);
+}
