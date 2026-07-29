@@ -62,3 +62,5 @@ nav:
   - app-nuree:
       - Visão geral: app-nuree/index.md
       - Requisitos: app-nuree/requisitos.md
+  - Reuniões:
+      - Discovery - produtos (29/07/2026): reunioes/discovery-produtos-2026-07-29.md
