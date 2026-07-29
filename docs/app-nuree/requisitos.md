@@ -20,11 +20,14 @@ Alicerce multi-tenant: quem é quem e o que cada um enxerga.
 |---|---|---|---|---|
 | RF-E1.1 | O sistema deve representar Produtos a partir de um catálogo fixo (Gestão, Pessoas, Lab, Pulse). | Alta | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Cada produto existe e é selecionável ao criar um programa. |
 | RF-E1.2 | O sistema deve permitir criar Programas como instância de um Produto para uma Empresa, com período opcional. | Alta | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Criar um programa vinculado a produto+empresa e recuperá-lo. |
+| RF-E1.2a | O sistema deve permitir que uma mesma Empresa tenha mais de um contrato simultâneo — cada contrato é um Programa — com dados isolados entre eles. | Alta | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Uma empresa com dois programas não vaza dados de um para o outro. |
 | RF-E1.3 | O sistema deve vincular usuários a um Programa (Participação) com um papel (participante, mentor, gestor) e o pacote contratado. | Alta | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Matricular um usuário como mentor e outro como participante no mesmo programa. |
 | RF-E1.4 | O sistema deve autenticar usuários por e-mail e senha e manter a sessão. | Alta | AGENTS.md | Login válido concede sessão; inválido é recusado. |
 | RF-E1.5 | Quando um usuário acessa pela primeira vez, o sistema deve exigir a troca de senha. | Média | AGENTS.md | Primeiro login redireciona para troca de senha. |
 | RF-E1.6 | O sistema deve restringir todo acesso a dados de um programa ao escopo (empresa/programa) do usuário. | Alta | AGENTS.md | Usuário de uma empresa não lê dados de outra. |
 | RF-E1.7 | Se um usuário solicitar dados fora do seu escopo, então o sistema deve negar o acesso, exceto para o papel ADMIN. | Alta | AGENTS.md | Requisição fora de escopo retorna negação; ADMIN acessa. |
+| RF-E1.8 | O sistema deve permitir a autenticação via conta Google (OAuth), de forma complementar ao login por e-mail e senha. | Média | Decisão de projeto | Entrar com Google e, na mesma conta, entrar com e-mail e senha. |
+| RF-E1.9 | Se um usuário autentica com Google e já existe conta com aquele e-mail, então o sistema deve vincular as identidades em vez de criar conta duplicada. | Média | Decisão de projeto | Login Google com e-mail já cadastrado reutiliza a conta existente. |
 
 ## E2 — Administração e configuração no-code
 
@@ -79,6 +82,9 @@ Auto-agendamento com regras + registro do que foi combinado.
 | RF-E5.5 | O sistema deve exibir ao participante a linha do tempo das suas sessões. | Média | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver 1ª, 2ª, 3ª sessão com datas e estado. |
 | RF-E5.6 | Quando ocorre uma sessão, o sistema deve permitir o check-in e o registro do combinado (ex.: fez mais / fez menos). | Alta | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Fazer check-in e gravar o combinado da sessão. |
 | RF-E5.7 | Quando uma sessão é agendada, o sistema deve programar as mensagens de lembrete correspondentes. | Média | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Agendamento cria disparos de lembrete (ver E9). |
+| RF-E5.8 | O sistema deve permitir ao mentor conectar sua conta Google (Calendar) por OAuth. | Média | Decisão de projeto | Mentor conecta o Google e o vínculo persiste. |
+| RF-E5.9 | Quando uma sessão é agendada, o sistema deve criar o evento correspondente no Google Calendar do mentor e do participante, com convite. | Média | Decisão de projeto | Agendar cria o evento e envia convite aos dois. |
+| RF-E5.10 | Enquanto a agenda Google do mentor estiver conectada, o sistema deve considerar seus horários ocupados para bloquear slots em conflito. | Média | Decisão de projeto | Horário ocupado no Google não aparece como slot disponível. |
 
 ## E6 — Conteúdo e trilhas de reforço
 
