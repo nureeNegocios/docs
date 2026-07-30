@@ -157,9 +157,9 @@ Diagnóstico de maturidade de qualquer área da empresa (RH no Nuree Pessoas, ge
 
 | ID | Requisito | Ator | Prioridade | Depende de | Fonte | Verificação |
 |---|---|---|---|---|---|---|
-| <a id="rf-e10-1">RF-E10.1</a> | O sistema deve permitir aplicar um diagnóstico (formulário especializado) para avaliar a maturidade de uma área da empresa (ex.: RH, gestão). | Admin | Média | [RF-E4.1](#rf-e4-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Aplicar o diagnóstico a uma empresa e coletar respostas. |
-| <a id="rf-e10-2">RF-E10.2</a> | O sistema deve calcular e exibir o resultado do diagnóstico (maturidade por área/subsistema avaliado). | Sistema | Média | [RF-E10.1](#rf-e10-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver o nível de maturidade por área após as respostas. |
-| <a id="rf-e10-3">RF-E10.3</a> | O sistema deve gerar um plano de ação cujos itens são tarefas acompanháveis. | Admin | Média | [RF-E10.2](#rf-e10-2), [RF-E3.1](#rf-e3-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Gerar plano e acompanhar seus itens como tarefas. |
+| <a id="rf-e10-1">RF-E10.1</a> | O sistema deve permitir montar um diagnóstico organizando as perguntas por dimensão/área, respondidas numa escala de maturidade de 1 a 5. | Admin | Média | [RF-E4.1](#rf-e4-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Montar diagnóstico com dimensões e perguntas em escala de 1 a 5. |
+| <a id="rf-e10-2">RF-E10.2</a> | O sistema deve calcular a maturidade por dimensão e a geral a partir das respostas e exibir o resultado. | Sistema | Média | [RF-E10.1](#rf-e10-1), [RF-E4.4](#rf-e4-4) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver a maturidade por dimensão e a geral após as respostas. |
+| <a id="rf-e10-3">RF-E10.3</a> | O sistema deve permitir gerar o plano de ação a partir das dimensões de menor maturidade, com itens acompanhados como tarefas. | Admin | Média | [RF-E10.2](#rf-e10-2), [RF-E3.1](#rf-e3-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Gerar plano a partir das dimensões fracas e acompanhar os itens como tarefas. |
 
 ## E11 — Registrar presença em eventos e emitir certificados
 
