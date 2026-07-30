@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Requisitos — app-nuree
 
 Formato, metadados e esquema de IDs em [convenção de escrita](../convencoes/requisitos.md).

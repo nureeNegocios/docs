@@ -27,6 +27,7 @@ theme:
   font:
     text: DM Sans
   features:
+    - navigation.tabs
     - navigation.top
     - navigation.tracking
     - toc.follow
