@@ -10,12 +10,17 @@ Sistema da Nuree Negócios. Plataforma multi-produto composta de **módulos comp
 ## Nesta seção
 
 - **[Requisitos](requisitos.md)** — especificação funcional e não-funcional, em formato EARS com rastreabilidade.
+- **Arquitetura** — diagramas-como-código, rastreados aos requisitos:
+    - [Visão de arquitetura](arquitetura-visao.md) — contexto e contêineres (C4).
+    - [Modelo de domínio](arquitetura-dominio.md) — as classes de cada motor.
+    - [Modelo de banco](arquitetura-banco.md) — o ERD-alvo e as migrations propostas.
+    - [Módulos da API](arquitetura-modulos.md) — os bounded contexts e a autorização central.
 
 ## Em breve
 
 Conforme polimos o desenho antes de implementar, entram aqui:
 
-- Modelo de domínio (diagrama de classes UML)
-- Modelo de banco de dados (gerado do `schema.prisma`)
-- Casos de uso
+- Event bus e jobs (catálogo de eventos de domínio e filas)
+- Desenho da API REST (recursos, JWT, OAuth, convite)
 - Diagramas de estado (ex.: ciclo de vida da sessão, do ciclo, da tarefa)
+- Fluxos-chave (diagramas de sequência)
