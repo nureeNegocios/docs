@@ -27,10 +27,10 @@ theme:
   font:
     text: DM Sans
   features:
-    - navigation.sections
     - navigation.top
     - navigation.tracking
     - navigation.indexes
+    - navigation.prune
     - toc.follow
     - content.action.edit
     - search.suggest
