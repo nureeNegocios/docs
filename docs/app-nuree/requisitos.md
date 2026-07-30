@@ -43,28 +43,7 @@ Painel onde o admin opera e **configura os motores sem depender do dev**.
 
 ## E3 — Organizar e acompanhar tarefas em ciclos
 
-Base de acompanhamento (já em produção); passa a pertencer ao Programa. Abaixo, os campos das entidades e o CRUD completo de cada uma.
-
-**Campos da entidade Tarefa**
-
-| Campo | Obrigatório | Descrição |
-|---|---|---|
-| título | Sim | Nome da tarefa. |
-| responsável | Sim | Usuário da mesma empresa; default = quem cria (RF-E1.3). |
-| status | Sim | `a fazer` (default), `fazendo`, `feita`. |
-| descrição | Não | Texto livre de detalhe. |
-| ciclo | Não | Sem ciclo, a tarefa fica na sementeira. |
-| prazo | Não | Data-alvo. |
-| subtarefas | Não | Itens com texto e marcação de concluído. |
-
-**Campos da entidade Ciclo**
-
-| Campo | Obrigatório | Descrição |
-|---|---|---|
-| nome | Sim | Nome do ciclo. |
-| data de início | Sim | Início do período. |
-| data de fim | Sim | Fim do período. |
-| encerrado | — | Estado definido ao encerrar o ciclo (não preenchido na criação). |
+Base de acompanhamento (já em produção); passa a pertencer ao Programa. CRUD completo de tarefas e ciclos.
 
 | ID | Requisito | Ator | Prioridade | Depende de | Fonte | Verificação |
 |---|---|---|---|---|---|---|
@@ -73,16 +52,13 @@ Base de acompanhamento (já em produção); passa a pertencer ao Programa. Abaix
 | <a id="rf-e3-3">RF-E3.3</a> | O sistema deve permitir excluir uma tarefa, removendo também suas subtarefas. | Cliente | Alta | [RF-E3.1](#rf-e3-1) | Inferência | Excluir tarefa a remove com suas subtarefas. |
 | <a id="rf-e3-4">RF-E3.4</a> | O sistema deve permitir mover uma tarefa entre os estados a fazer, fazendo e feita. | Cliente | Alta | [RF-E3.1](#rf-e3-1) | Existente | Mover a tarefa pelos três estados. |
 | <a id="rf-e3-5">RF-E3.5</a> | O sistema deve permitir adicionar, marcar como feita e remover subtarefas de uma tarefa. | Cliente | Média | [RF-E3.1](#rf-e3-1) | Existente | Adicionar subtarefa, marcá-la e removê-la. |
-| <a id="rf-e3-6">RF-E3.6</a> | Quando um usuário cria um ciclo, o sistema deve exigir nome, data de início e data de fim. | Cliente | Alta | [RF-E1.6](#rf-e1-6) | Existente | Criar ciclo exige os três campos. |
-| <a id="rf-e3-7">RF-E3.7</a> | O sistema deve permitir editar nome, data de início e data de fim de um ciclo. | Cliente | Alta | [RF-E3.6](#rf-e3-6) | Inferência | Alterar os campos do ciclo e persistir. |
-| <a id="rf-e3-8">RF-E3.8</a> | O sistema deve permitir excluir um ciclo, devolvendo suas tarefas à sementeira. | Cliente | Média | [RF-E3.6](#rf-e3-6) | Inferência | Excluir ciclo com tarefas move-as para a sementeira. |
+| <a id="rf-e3-6">RF-E3.6</a> | Quando o admin cria um ciclo, o sistema deve exigir nome, data de início e data de fim. | Admin | Alta | [RF-E1.4a](#rf-e1-4a) | Existente | Criar ciclo exige os três campos; só admin cria. |
+| <a id="rf-e3-7">RF-E3.7</a> | O sistema deve permitir ao admin editar nome, data de início e data de fim de um ciclo. | Admin | Alta | [RF-E3.6](#rf-e3-6) | Inferência | Admin altera os campos do ciclo; cliente não. |
+| <a id="rf-e3-8">RF-E3.8</a> | O sistema deve permitir ao admin excluir um ciclo, excluindo também suas tarefas e as subtarefas delas. | Admin | Média | [RF-E3.6](#rf-e3-6) | Decisão de projeto | Excluir um ciclo remove também suas tarefas e subtarefas; só admin. |
 | <a id="rf-e3-9">RF-E3.9</a> | Quando um ciclo é encerrado, o sistema deve devolver as tarefas não concluídas à sementeira. | Sistema | Alta | [RF-E3.6](#rf-e3-6) | Existente | Encerrar ciclo com tarefa aberta a move para a sementeira. |
 | <a id="rf-e3-10">RF-E3.10</a> | O sistema deve organizar as tarefas em ciclos e, quando sem ciclo, na sementeira. | Cliente | Alta | [RF-E3.1](#rf-e3-1), [RF-E3.6](#rf-e3-6) | Existente | Tarefa sem ciclo aparece na sementeira. |
 | <a id="rf-e3-11">RF-E3.11</a> | O sistema deve exibir as tarefas em visões de lista, kanban e calendário. | Todos | Média | [RF-E3.1](#rf-e3-1) | Existente | Alternar entre as três visões. |
 | <a id="rf-e3-12">RF-E3.12</a> | O sistema deve permitir definir templates de ciclo (ex.: Florescimento) e instanciá-los num programa, gerando ciclo e tarefas. | Admin | Alta | [RF-E3.6](#rf-e3-6), [RF-E2.4](#rf-e2-4) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Instanciar o template cria o ciclo com as tarefas do checklist. |
-
-!!! question "A confirmar"
-    RF-E3.8 assume que excluir um ciclo **devolve** as tarefas à sementeira. Alternativa: **bloquear** a exclusão de ciclo que ainda tenha tarefas. Definir qual comportamento.
 
 ## E4 — Criar formulários e coletar respostas
 
