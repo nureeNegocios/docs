@@ -4,7 +4,7 @@ Formato, metadados e esquema de IDs em [convenção de escrita](../convencoes/re
 
 ---
 
-## E1 — Identidade, Programas e Escopo
+## E1 — Login, papéis e acesso aos dados por empresa e programa
 
 Alicerce multi-tenant: quem é quem e o que cada um enxerga. É a base de que todos os outros épicos dependem.
 
@@ -22,7 +22,7 @@ Alicerce multi-tenant: quem é quem e o que cada um enxerga. É a base de que to
 | <a id="rf-e1-8">RF-E1.8</a> | O sistema deve permitir a autenticação via conta Google (OAuth), de forma complementar ao login por e-mail e senha. | Todos | Média | [RF-E1.4](#rf-e1-4) | Decisão de projeto | Entrar com Google e, na mesma conta, entrar com e-mail e senha. |
 | <a id="rf-e1-9">RF-E1.9</a> | Se um usuário autentica com Google e já existe conta com aquele e-mail, então o sistema deve vincular as identidades em vez de criar conta duplicada. | Todos | Média | [RF-E1.8](#rf-e1-8) | Decisão de projeto | Login Google com e-mail já cadastrado reutiliza a conta existente. |
 
-## E2 — Administração e configuração no-code
+## E2 — Administrar empresas, usuários e programas
 
 Painel onde o admin opera e **configura os motores sem depender do dev**.
 
@@ -36,7 +36,7 @@ Painel onde o admin opera e **configura os motores sem depender do dev**.
 | <a id="rf-e2-6">RF-E2.6</a> | O sistema deve oferecer painéis de acompanhamento por Programa e por Pessoa. | Admin | Média | [RF-E1.3](#rf-e1-3) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver as tarefas/sessões de uma pessoa agrupadas. |
 | <a id="rf-e2-7">RF-E2.7</a> | O sistema deve permitir clonar ou reaplicar um template (formulário, jornada, trilha, selo) a outro programa sem recriá-lo. | Admin | Média | [RF-E2.4](#rf-e2-4) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Aplicar um mesmo formulário a dois programas. |
 
-## E3 — Tarefas e Ciclos
+## E3 — Organizar e acompanhar tarefas em ciclos
 
 Base de acompanhamento (já em produção); passa a pertencer ao Programa. Abaixo, os campos das entidades e o CRUD completo de cada uma.
 
@@ -79,7 +79,7 @@ Base de acompanhamento (já em produção); passa a pertencer ao Programa. Abaix
 !!! question "A confirmar"
     RF-E3.8 assume que excluir um ciclo **devolve** as tarefas à sementeira. Alternativa: **bloquear** a exclusão de ciclo que ainda tenha tarefas. Definir qual comportamento.
 
-## E4 — Construtor de formulários
+## E4 — Criar formulários e coletar respostas
 
 Motor único de formulários, reusado por Mergulho, tarefas de casa, assessment/PDI e diagnóstico.
 
@@ -92,7 +92,7 @@ Motor único de formulários, reusado por Mergulho, tarefas de casa, assessment/
 | <a id="rf-e4-5">RF-E4.5</a> | Quando um participante envia uma resposta, o sistema deve registrá-la e emitir um evento para os módulos interessados. | Sistema | Alta | [RF-E4.4](#rf-e4-4) | Inferência | Envio dispara o evento de resposta enviada. |
 | <a id="rf-e4-6">RF-E4.6</a> | Onde um formulário for do tipo avaliado (quiz), o sistema deve registrar gabarito e pontuação e, opcionalmente, um tempo-limite. | Admin/Sistema | Média | [RF-E4.1](#rf-e4-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Responder um quiz produz pontuação conforme o gabarito. |
 
-## E5 — Agenda e sessões de mentoria
+## E5 — Agendar e registrar sessões de mentoria
 
 Auto-agendamento com regras + registro do que foi combinado.
 
@@ -109,7 +109,7 @@ Auto-agendamento com regras + registro do que foi combinado.
 | <a id="rf-e5-9">RF-E5.9</a> | Quando uma sessão é agendada, o sistema deve criar o evento correspondente no Google Calendar do mentor e do participante, com convite. | Sistema | Média | [RF-E5.2](#rf-e5-2), [RF-E5.8](#rf-e5-8) | Decisão de projeto | Agendar cria o evento e envia convite aos dois. |
 | <a id="rf-e5-10">RF-E5.10</a> | Enquanto a agenda Google do mentor estiver conectada, o sistema deve considerar seus horários ocupados para bloquear slots em conflito. | Sistema | Média | [RF-E5.8](#rf-e5-8), [RF-E5.1](#rf-e5-1) | Decisão de projeto | Horário ocupado no Google não aparece como slot disponível. |
 
-## E6 — Conteúdo e trilhas de reforço
+## E6 — Publicar conteúdo e trilhas de reforço
 
 Biblioteca de reforço de aprendizagem, montada pelo admin.
 
@@ -120,7 +120,7 @@ Biblioteca de reforço de aprendizagem, montada pelo admin.
 | <a id="rf-e6-3">RF-E6.3</a> | O sistema deve permitir consumir os itens e marcar o progresso. | Participante | Média | [RF-E6.1](#rf-e6-1), [RF-E1.3](#rf-e1-3) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Marcar item como concluído e ver o progresso. |
 | <a id="rf-e6-4">RF-E6.4</a> | O sistema não deve bloquear conteúdo por não-conclusão (reforço, não vigilância). | Sistema | Média | [RF-E6.3](#rf-e6-3) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Todos os itens acessíveis independentemente do progresso. |
 
-## E7 — Jornada do participante
+## E7 — Montar e exibir a jornada do participante
 
 Espinha que amarra encontros, formulários, trilhas e selos numa linha do tempo. Também um construtor.
 
@@ -131,7 +131,7 @@ Espinha que amarra encontros, formulários, trilhas e selos numa linha do tempo.
 | <a id="rf-e7-3">RF-E7.3</a> | O sistema deve exibir a jornada e o progresso nela. | Participante | Média | [RF-E7.1](#rf-e7-1), [RF-E1.3](#rf-e1-3) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Participante vê a linha do tempo e onde está. |
 | <a id="rf-e7-4">RF-E7.4</a> | Quando o participante conclui uma etapa, o sistema deve registrar a conclusão e emitir um evento. | Sistema | Média | [RF-E7.3](#rf-e7-3) | Inferência | Concluir etapa dispara o evento de etapa concluída. |
 
-## E8 — Gamificação editorial
+## E8 — Conceder selos por progresso (gamificação)
 
 Selos por pilar/competência, silenciosos e editoriais.
 
@@ -141,7 +141,7 @@ Selos por pilar/competência, silenciosos e editoriais.
 | <a id="rf-e8-2">RF-E8.2</a> | Quando um critério de selo é satisfeito, o sistema deve conceder o selo ao participante. | Sistema | Média | [RF-E8.1](#rf-e8-1), [RF-E7.4](#rf-e7-4) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Cumprir o critério concede o selo automaticamente. |
 | <a id="rf-e8-3">RF-E8.3</a> | O sistema deve exibir os selos do participante em estética silenciosa, sem ranking, streak ou confete. | Participante | Média | [RF-E8.2](#rf-e8-2) | PRODUCT.md | Tela de selos sem elementos competitivos. |
 
-## E9 — Régua de comunicação (WhatsApp)
+## E9 — Enviar mensagens automáticas por WhatsApp
 
 Mensagens automáticas antes e depois de cada encontro.
 
@@ -151,7 +151,7 @@ Mensagens automáticas antes e depois de cada encontro.
 | <a id="rf-e9-2">RF-E9.2</a> | Quando um gatilho ocorre (antes/depois de encontro, ou X horas antes de uma sessão), o sistema deve agendar o disparo. | Sistema | Média | [RF-E9.1](#rf-e9-1), [RF-E7.1](#rf-e7-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Gatilho cria um disparo agendado para o momento certo. |
 | <a id="rf-e9-3">RF-E9.3</a> | O sistema deve enviar as mensagens via WhatsApp e registrar o status (agendado, enviado, falhou), com novas tentativas em caso de falha. | Sistema | Média | [RF-E9.2](#rf-e9-2) | Decisão de projeto | Disparo enviado atualiza status; falha gera retry. |
 
-## E10 — Diagnóstico e planos de ação (Nuree Pessoas)
+## E10 — Diagnosticar RH e gerar planos de ação
 
 Em grande parte, composição de E4 (formulário) + E3 (tarefas).
 
@@ -161,7 +161,7 @@ Em grande parte, composição de E4 (formulário) + E3 (tarefas).
 | <a id="rf-e10-2">RF-E10.2</a> | O sistema deve calcular e exibir o resultado do diagnóstico (maturidade por subsistema). | Sistema | Média | [RF-E10.1](#rf-e10-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver o nível de maturidade por subsistema após respostas. |
 | <a id="rf-e10-3">RF-E10.3</a> | O sistema deve gerar um plano de ação cujos itens são tarefas acompanháveis. | Admin | Média | [RF-E10.2](#rf-e10-2), [RF-E3.1](#rf-e3-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Gerar plano e acompanhar seus itens como tarefas. |
 
-## E11 — Presença e certificação
+## E11 — Registrar presença em eventos e emitir certificados
 
 Para formações presenciais. Sem pagamento na plataforma.
 
