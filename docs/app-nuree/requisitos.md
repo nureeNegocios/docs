@@ -1,22 +1,6 @@
 # Requisitos — app-nuree
 
-Especificação em formato **EARS** com metadados de rastreabilidade. Ver a [convenção de escrita](../convencoes/requisitos.md) para os padrões e o esquema de IDs.
-
-!!! info "Fontes desta especificação"
-    - **[Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md)** — Gabriel + Helô, 29/07/2026. Fonte primária.
-    - **Inferência** — requisito derivado da natureza dos produtos, a validar com o negócio.
-    - **Decisão de projeto** — decisão de arquitetura/tecnologia registrada.
-    - **PRODUCT.md / AGENTS.md** — regras de marca e de projeto já vigentes.
-
-!!! abstract "Papéis (coluna Ator)"
-    - **Admin** — plataforma (Nuree); acesso cross-tenant, opera todos os construtores.
-    - **Cliente** — usuário comum, restrito ao escopo do seu programa. Papéis de programa: **Participante**, **Mentor**, **Gestor**.
-    - **Todos** — qualquer usuário autenticado (Admin ou Cliente).
-    - **Sistema** — comportamento automático, sem ator humano.
-
-    Os requisitos de escopo/permissão (RF-E1.6, RF-E1.7) aplicam-se ao **Cliente**; o **Admin** é a exceção que transita entre escopos.
-
-**Leitura por dependência:** a coluna **Depende de** aponta os pré-requisitos de cada item. A base é sempre E1 (identidade, papéis e escopo): estabelecer *quem é o usuário e seu papel* vem **antes** das permissões, e as permissões vêm antes dos módulos que operam sobre dados. Prioridade em MoSCoW: `Alta` (must) · `Média` (should) · `Baixa` (could).
+Formato, metadados e esquema de IDs em [convenção de escrita](../convencoes/requisitos.md).
 
 ---
 
@@ -214,13 +198,5 @@ Aplicam-se ao sistema como um todo (sem ator específico).
 | <a id="rc-4">RC-4</a> | Módulos se comunicam por event bus de domínio; trabalho assíncrono roda em worker. | Decisão de projeto |
 | <a id="rc-5">RC-5</a> | Integrações externas: WhatsApp (régua) e Google (login OAuth + Calendar). | Decisão de projeto |
 
----
-
-## Fora de escopo (por enquanto)
-
-- **Pagamentos, ingressos e inscrição paga** — ticket alto; a venda não precisa ocorrer na plataforma. Do que seria esse módulo, só o check-in de eventos permanece (E11).
-- **Artefato gerado por IA** (Mapa da Essência ao fim do Mergulho) — a repensar.
-- **Software de RH para o cliente** (folha, ponto) — o Nuree Pessoas ensina a implantar, não constrói o RH da empresa.
-- **Recorrência, anexos genéricos, analytics avançado, histórico/auditoria ampla, realtime, app mobile** — não agora.
 </content>
 </invoke>
