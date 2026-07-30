@@ -151,14 +151,14 @@ Mensagens automáticas antes e depois de cada encontro.
 | <a id="rf-e9-2">RF-E9.2</a> | Quando um gatilho ocorre (antes/depois de encontro, ou X horas antes de uma sessão), o sistema deve agendar o disparo. | Sistema | Média | [RF-E9.1](#rf-e9-1), [RF-E7.1](#rf-e7-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Gatilho cria um disparo agendado para o momento certo. |
 | <a id="rf-e9-3">RF-E9.3</a> | O sistema deve enviar as mensagens via WhatsApp e registrar o status (agendado, enviado, falhou), com novas tentativas em caso de falha. | Sistema | Média | [RF-E9.2](#rf-e9-2) | Decisão de projeto | Disparo enviado atualiza status; falha gera retry. |
 
-## E10 — Diagnosticar RH e gerar planos de ação
+## E10 — Diagnosticar áreas da empresa e gerar planos de ação
 
-Em grande parte, composição de E4 (formulário) + E3 (tarefas).
+Diagnóstico de maturidade de qualquer área da empresa (RH no Nuree Pessoas, gestão/OKR no Nuree Gestão, etc.) + planos de ação. Em grande parte, composição de E4 (formulário) + E3 (tarefas).
 
 | ID | Requisito | Ator | Prioridade | Depende de | Fonte | Verificação |
 |---|---|---|---|---|---|---|
-| <a id="rf-e10-1">RF-E10.1</a> | O sistema deve permitir aplicar um diagnóstico como formulário especializado de subsistemas e maturidade. | Admin | Média | [RF-E4.1](#rf-e4-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Aplicar o diagnóstico a uma empresa e coletar respostas. |
-| <a id="rf-e10-2">RF-E10.2</a> | O sistema deve calcular e exibir o resultado do diagnóstico (maturidade por subsistema). | Sistema | Média | [RF-E10.1](#rf-e10-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver o nível de maturidade por subsistema após respostas. |
+| <a id="rf-e10-1">RF-E10.1</a> | O sistema deve permitir aplicar um diagnóstico (formulário especializado) para avaliar a maturidade de uma área da empresa (ex.: RH, gestão). | Admin | Média | [RF-E4.1](#rf-e4-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Aplicar o diagnóstico a uma empresa e coletar respostas. |
+| <a id="rf-e10-2">RF-E10.2</a> | O sistema deve calcular e exibir o resultado do diagnóstico (maturidade por área/subsistema avaliado). | Sistema | Média | [RF-E10.1](#rf-e10-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Ver o nível de maturidade por área após as respostas. |
 | <a id="rf-e10-3">RF-E10.3</a> | O sistema deve gerar um plano de ação cujos itens são tarefas acompanháveis. | Admin | Média | [RF-E10.2](#rf-e10-2), [RF-E3.1](#rf-e3-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Gerar plano e acompanhar seus itens como tarefas. |
 
 ## E11 — Registrar presença em eventos e emitir certificados
