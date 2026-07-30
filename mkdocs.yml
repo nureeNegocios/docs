@@ -29,8 +29,6 @@ theme:
   features:
     - navigation.top
     - navigation.tracking
-    - navigation.indexes
-    - navigation.prune
     - toc.follow
     - content.action.edit
     - search.suggest
@@ -61,8 +59,6 @@ nav:
       - Escrita de requisitos: convencoes/requisitos.md
   - app-nuree:
       - Visão geral: app-nuree/index.md
-      - Produto e marca: app-nuree/produto.md
-      - Convenções do projeto: app-nuree/convencoes-projeto.md
       - Requisitos: app-nuree/requisitos.md
   - Reuniões:
       - Discovery - produtos (29/07/2026): reunioes/discovery-produtos-2026-07-29.md
