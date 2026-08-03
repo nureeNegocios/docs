@@ -3,9 +3,13 @@ hide:
   - navigation
 ---
 
-# Registro de exploração de arquitetura — app-nuree
+# Reunião — Exploração de arquitetura (app-nuree)
 
-Diário **vivo** do desenho do app-nuree: o processo seguido, as decisões, e as alternativas
+- **Data:** 2026-08-02
+- **Tipo:** individual (Gabriel)
+- **Escopo:** app-nuree
+
+Diário **vivo** desta sessão de desenho: o processo seguido, as decisões, e as alternativas
 consideradas (inclusive as descartadas). Existe para que o *porquê* não se perca — um desenho
 sem o raciocínio apodrece.
 
@@ -28,8 +32,8 @@ Ordem seguida (Ford/Richards, *Fundamentals of Software Architecture*):
 
 ### 1. Características a partir dos requisitos
 
-Varredura dos [requisitos](requisitos.md) → lista de candidatas → poda. Detalhe em
-[características de arquitetura](caracteristicas.md).
+Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas → poda. Detalhe em
+[características de arquitetura](../app-nuree/caracteristicas.md).
 
 - **Dirigentes:** Segurança, Configurabilidade, Composabilidade — e **Evolutibilidade**,
   percebida como implícita mais tarde.
@@ -48,7 +52,7 @@ Varredura dos [requisitos](requisitos.md) → lista de candidatas → poda. Deta
   que ele quer aprender na prática.
 - **Produtos (Gestão · Pessoas · Lab · Pulse) não são eixo de agrupamento** — são
   **composição** de funções (uma dimensão), pelos próprios requisitos: `Produto` é catálogo,
-  `Programa` é a instância ([RF-E1.1](requisitos.md#rf-e1-1), [RF-E1.2](requisitos.md#rf-e1-2)),
+  `Programa` é a instância ([RF-E1.1](../app-nuree/requisitos.md#rf-e1-1), [RF-E1.2](../app-nuree/requisitos.md#rf-e1-2)),
   com módulos compartilhados.
 - **Refinamentos aplicados:**
     - Mentoria + Eventos/Certificação **dissolvidos na Jornada** — um encontro é o mesmo
@@ -57,10 +61,10 @@ Varredura dos [requisitos](requisitos.md) → lista de candidatas → poda. Deta
     - **Mídia** saiu do mapa de negócio (**infra técnica**), diferente de **Documentos**
       (função de negócio real).
     - **Documentos** (mini-drive por empresa, com remetente Nuree vs cliente) — novo requisito,
-      virou o épico [E12](requisitos.md).
+      virou o épico [E12](../app-nuree/requisitos.md).
 - **Resultado: 9 funções** — Contas & Contratos, Execução do trabalho, Avaliação & Diagnóstico,
   Jornada, Agendamento *(suporte)*, Aprendizagem, Reconhecimento, Comunicação, Documentos.
-  Ver `componentes.drawio`.
+  Ver `app-nuree/componentes.drawio`.
 
 !!! warning "Ainda não são 'os componentes'"
     Os blocos de hoje são um **mapa de domínio por função de negócio**, não o resultado do
@@ -125,5 +129,5 @@ Varredura dos [requisitos](requisitos.md) → lista de candidatas → poda. Deta
 
 ## Referências
 
-- [Requisitos](requisitos.md) · [Características](caracteristicas.md) · [Ações](acoes.md)
-- `componentes.drawio` — mapa de funções de negócio e suas relações
+- [Requisitos](../app-nuree/requisitos.md) · [Características](../app-nuree/caracteristicas.md) · [Ações](../app-nuree/acoes.md)
+- `app-nuree/componentes.drawio` — mapa de funções de negócio e suas relações
