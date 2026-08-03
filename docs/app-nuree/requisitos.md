@@ -157,6 +157,18 @@ Para formações presenciais. Sem pagamento na plataforma.
 | <a id="rf-e11-2">RF-E11.2</a> | O sistema deve gerar um relatório de presença exportável para o cliente. | Admin | Média | [RF-E11.1](#rf-e11-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Exportar a lista de presença de um evento. |
 | <a id="rf-e11-3">RF-E11.3</a> | Quando um cliente cumpre a carga horária, o sistema deve gerar um certificado em PDF. | Sistema | Baixa | [RF-E11.1](#rf-e11-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Cumprir a carga gera o certificado em PDF. |
 
+## E12 — Trocar documentos por empresa
+
+Repositório de arquivos por empresa, tipo mini-drive: pastas e envio/recebimento com o remetente visível (Nuree ou empresa cliente). Levantado na exploração de arquitetura.
+
+| ID | Requisito | Ator | Prioridade | Depende de | Fonte | Verificação |
+|---|---|---|---|---|---|---|
+| <a id="rf-e12-1">RF-E12.1</a> | O sistema deve armazenar documentos vinculados a uma Empresa, organizados em pastas com hierarquia. | Todos | Média | [RF-E1.6](#rf-e1-6) | Decisão de projeto | Criar pasta e guardar um documento nela. |
+| <a id="rf-e12-2">RF-E12.2</a> | O sistema deve permitir enviar e baixar documentos dentro do escopo da empresa. | Todos | Média | [RF-E12.1](#rf-e12-1) | Decisão de projeto | Upload e download de um documento. |
+| <a id="rf-e12-3">RF-E12.3</a> | O sistema deve registrar e exibir o remetente de cada documento, distinguindo se foi enviado pela Nuree (Admin) ou pela empresa cliente. | Sistema | Média | [RF-E12.2](#rf-e12-2) | Decisão de projeto | Um documento exibe quem enviou (Nuree/cliente). |
+| <a id="rf-e12-4">RF-E12.4</a> | O sistema deve permitir criar, renomear e remover pastas. | Todos | Baixa | [RF-E12.1](#rf-e12-1) | Decisão de projeto | CRUD de pastas dentro da empresa. |
+| <a id="rf-e12-5">RF-E12.5</a> | O sistema deve restringir o acesso aos documentos ao escopo da empresa/programa. | Sistema | Alta | [RF-E1.6](#rf-e1-6) | Decisão de projeto | Empresa não acessa documentos de outra. |
+
 ---
 
 ## Requisitos não-funcionais

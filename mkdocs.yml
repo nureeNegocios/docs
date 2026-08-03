@@ -61,6 +61,8 @@ nav:
   - app-nuree:
       - Visão geral: app-nuree/index.md
       - Requisitos: app-nuree/requisitos.md
+      - Características de arquitetura: app-nuree/caracteristicas.md
+      - Registro de exploração: app-nuree/registro-arquitetura.md
       - Ações do sistema: app-nuree/acoes.md
       - Arquitetura:
           - Visão de arquitetura: app-nuree/arquitetura-visao.md

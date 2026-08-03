@@ -1,0 +1,85 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Funções de negócio app-nuree" id="funcoes-nuree">
+    <mxGraphModel dx="1264" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1220" pageHeight="690" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="contas" value="&lt;b&gt;Contas &amp;amp; Contratos&lt;/b&gt;&lt;br&gt;&lt;br&gt;Autenticação · Usuário · Empresa · Programa / Participação · Produto&lt;br&gt;&lt;br&gt;&lt;i&gt;E1 · RF-E1.1–E1.11&lt;br&gt;E2 · RF-E2.1–E2.8&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="execucao" value="&lt;b&gt;Execução do trabalho&lt;/b&gt;&lt;br&gt;&lt;br&gt;Tarefas · Ciclos · Sementeira · Templates de ciclo&lt;br&gt;&lt;br&gt;&lt;i&gt;E3 · RF-E3.1–E3.12&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="40" y="210" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="avaliacao" value="&lt;b&gt;Avaliação &amp;amp; Diagnóstico&lt;/b&gt;&lt;br&gt;&lt;br&gt;Formulários (motor) · Diagnóstico · Plano de ação · Check-in&lt;br&gt;&lt;br&gt;&lt;i&gt;E4 · RF-E4.1–E4.6&lt;br&gt;E10 · RF-E10.1–E10.3&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="40" y="360" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="agendamento" value="&lt;b&gt;Agendamento de encontros&lt;/b&gt;  &lt;i&gt;(suporte)&lt;/i&gt;&lt;br&gt;&lt;br&gt;Disponibilidade · Slots · Sessões · Registro · Sync Calendar&lt;br&gt;&lt;br&gt;&lt;i&gt;E5 · RF-E5.1–E5.12&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F0FA;strokeColor=#6B4B9B;strokeWidth=1.5;dashed=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="440" y="40" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="jornada" value="&lt;b&gt;Jornada&lt;/b&gt;&lt;br&gt;&lt;br&gt;Etapas · Encontros (1:1 e presenciais) · Presença / check-in · Certificado&lt;br&gt;&lt;br&gt;&lt;i&gt;E7 · RF-E7.1–E7.4&lt;br&gt;E11 · RF-E11.1–E11.3&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF7EF;strokeColor=#2E7D46;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="220" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="aprendizagem" value="&lt;b&gt;Aprendizagem&lt;/b&gt;&lt;br&gt;&lt;br&gt;Trilhas · Itens · Progresso&lt;br&gt;&lt;br&gt;&lt;i&gt;E6 · RF-E6.1–E6.4&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="440" y="410" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="comunicacao" value="&lt;b&gt;Comunicação&lt;/b&gt;&lt;br&gt;&lt;br&gt;Modelos de mensagem · Disparos (WhatsApp)&lt;br&gt;&lt;br&gt;&lt;i&gt;E9 · RF-E9.1–E9.3&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="840" y="40" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="reconhecimento" value="&lt;b&gt;Reconhecimento&lt;/b&gt;&lt;br&gt;&lt;br&gt;Selos · Critérios · Concessão&lt;br&gt;&lt;br&gt;&lt;i&gt;E8 · RF-E8.1–E8.3&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="840" y="210" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="documentos" value="&lt;b&gt;Documentos&lt;/b&gt;&lt;br&gt;&lt;br&gt;Repositório por empresa · Pastas · Remetente (admin / cliente)&lt;br&gt;&lt;br&gt;&lt;i&gt;E12 · RF-E12.1–E12.5&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B8860B;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=8;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="840" y="390" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="infra" value="&lt;b&gt;Fora do mapa de negócio — infra técnica&lt;/b&gt;&amp;nbsp;&amp;nbsp;·&amp;nbsp;&amp;nbsp;Mídia / armazenamento (necessidade em RF-E6.2, RF-E11.3)&amp;nbsp;&amp;nbsp;·&amp;nbsp;&amp;nbsp;Segurança JWT / RBAC (RNF-3)&amp;nbsp;&amp;nbsp;·&amp;nbsp;&amp;nbsp;Escopo multi-tenant em toda consulta (RF-E1.6, RNF-2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;dashed=1;align=left;verticalAlign=middle;spacingLeft=10;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="560" width="1120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pa" value="plano vira tarefas · RF-E10.3" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" source="avaliacao" target="execucao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ja" value="anexa formulário · RF-E7.2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=0;exitY=0.7;entryX=1;entryY=0.4;" parent="1" source="jornada" target="avaliacao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_jl" value="anexa trilha · RF-E7.2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="jornada" target="aprendizagem" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_jr" value="anexa selo · RF-E7.2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="jornada" target="reconhecimento" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_jg" value="encontros · RF-E7.1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" source="jornada" target="agendamento" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_jc" value="gatilho encontro · RF-E9.2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=1;exitY=0.2;entryX=0;entryY=0.7;" parent="1" source="jornada" target="comunicacao" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="248" />
+              <mxPoint x="800" y="117" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gc" value="gatilho sessão · RF-E5.7" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=1;exitY=0.4;entryX=0;entryY=0.3;" parent="1" source="agendamento" target="comunicacao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_lr" value="conclusão concede · RF-E8.2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=1;exitY=0.4;entryX=0;entryY=0.8;" parent="1" source="aprendizagem" target="reconhecimento" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="454" />
+              <mxPoint x="800" y="298" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_la" value="quiz conclui trilha · RF-E6.1/E4.6" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;html=1;endArrow=block;strokeColor=#777777;strokeWidth=1.5;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#555555;exitX=0.527;exitY=0.959;entryX=0.5;entryY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="aprendizagem" target="avaliacao">
+          <mxGeometry x="-0.0049" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="609" y="550" />
+              <mxPoint x="400" y="550" />
+              <mxPoint x="400" y="530" />
+              <mxPoint x="200" y="530" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
