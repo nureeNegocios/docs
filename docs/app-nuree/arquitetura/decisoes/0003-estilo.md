@@ -51,4 +51,4 @@ Os 8 estilos do catálogo:
 ## Consequências
 
 - Deploy em Docker Compose ([RC-2](../../requisitos.md#rc-2)); worker na mesma imagem.
-- As decisões acima ficam protegidas por [fitness functions](0004-fitness-functions.md).
+- As decisões acima ficam protegidas por (0004-fitness-functions.md)".
