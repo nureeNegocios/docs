@@ -66,6 +66,7 @@ nav:
       - Arquitetura:
           - Características: app-nuree/arquitetura/caracteristicas.md
           - Componentes: app-nuree/arquitetura/componentes.md
+          - Stack: app-nuree/arquitetura/stack.md
           - Fitness functions: app-nuree/arquitetura/fitness-functions.md
           - Diagramas: app-nuree/arquitetura/diagramas.md
       - Reuniões:
