@@ -64,6 +64,11 @@ nav:
       - Requisitos: app-nuree/requisitos.md
       - Ações do sistema: app-nuree/acoes.md
       - Arquitetura:
+          - Decisões:
+            - Cararcterísticas de Arquitetura: app-nuree/arquitetura/decisoes/0001-caracteristicas.md
+            - Componentes: app-nuree/arquitetura/decisoes/0002-componentes.md
+            - Estilo Arquitetural: app-nuree/arquitetura/decisoes/0003-estilo.md
+
           - Características: app-nuree/arquitetura/caracteristicas.md
           - Componentes: app-nuree/arquitetura/componentes.md
           - Fitness functions: app-nuree/arquitetura/fitness-functions.md
