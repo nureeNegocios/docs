@@ -61,13 +61,12 @@ nav:
   - app-nuree:
       - Visão geral: app-nuree/index.md
       - Requisitos: app-nuree/requisitos.md
-      - Características de arquitetura: app-nuree/caracteristicas.md
       - Ações do sistema: app-nuree/acoes.md
       - Arquitetura:
-          - Visão de arquitetura: app-nuree/arquitetura-visao.md
-          - Modelo de domínio: app-nuree/arquitetura-dominio.md
-          - Modelo de banco: app-nuree/arquitetura-banco.md
-          - Módulos da API: app-nuree/arquitetura-modulos.md
+          - Características: app-nuree/caracteristicas.md
+          - Componentes: app-nuree/componentes.md
+          - Fitness functions: app-nuree/fitness-functions.md
+          - Diagramas: app-nuree/diagramas.md
       - Reuniões:
           - Discovery - produtos (29/07/2026): reunioes/discovery-produtos-2026-07-29.md
           - Exploração de arquitetura (02/08/2026): reunioes/exploracao-arquitetura-2026-08-02.md

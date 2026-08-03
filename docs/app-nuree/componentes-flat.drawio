@@ -1,0 +1,148 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Acoplamento de componentes (nomes canônicos)" id="componentes-flat">
+    <mxGraphModel dx="1848" dy="955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1540" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="auth" value="&lt;b&gt;Auth&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;RF-E1.4·1.8–1.11&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cad" value="&lt;b&gt;Account&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;RF-E1.1–1.3·E2.1–2.8&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="440" y="40" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tar" value="&lt;b&gt;Task&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;tarefas · ciclos · rollover · templates · RF-E3.1–3.12&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="250" y="150" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="diag" value="&lt;b&gt;Diagnostic&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;RF-E10.1–10.3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="170" y="310" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="form" value="&lt;b&gt;Form&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#00838F;&#39;&gt;motor genérico · afferent alto → estável · RF-E4.1–4.5&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F6F7;strokeColor=#00838F;strokeWidth=2.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="500" y="350" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="etap" value="&lt;b&gt;Journey&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#2E7D46;&#39;&gt;linha do tempo + progresso + presença · efferent alto · RF-E7.1–7.4·E11.1–11.2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF7EF;strokeColor=#2E7D46;strokeWidth=2.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="770" y="350" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tri" value="&lt;b&gt;Track&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;itens · quiz (gabarito/pontuação) · progresso · RF-E6.1–6.4·E4.6&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="500" y="560" width="180" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="selo" value="&lt;b&gt;Recognition&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;concessão por critério · selo ou certificado (PDF) · RF-E8.1–8.3·E11.3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="770" y="650" width="180" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="disp" value="&lt;b&gt;Scheduling&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;disponibilidade · slots · sessões · registro · sync Google · RF-E5.1–5.12&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="180" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msg" value="&lt;b&gt;Messaging&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;modelos · disparos WhatsApp · RF-E9.1–9.3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="470" width="190" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" value="&lt;b&gt;Document&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#8899AA;&#39;&gt;pastas · remetente · RF-E12.1–12.5&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#555555;strokeWidth=1.5;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="130" y="470" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="midia" value="&lt;b&gt;Media&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#999999;&#39;&gt;servir blob (presigned) · RF-E6.2·E11.3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="620" y="870" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="seg" value="&lt;b&gt;Scope&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#999999;&#39;&gt;JWT/RBAC · escopo em toda consulta · RNF-3·RF-E1.6·RNF-2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="880" y="860" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="report" value="&lt;b&gt;Reporting&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#9C7BB0;&#39;&gt;read-model · lê Task·Journey·Scheduling·Recognition (só leitura) · RF-E2.6&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#FBFAFC;strokeColor=#9C7BB0;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="330" y="720" width="300" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="f_diag" value="reusa motor · RF-E10.1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#00838F;strokeWidth=2;dashed=1;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#00565E;exitX=1;exitY=0.5;entryX=0;entryY=0.4;" parent="1" source="diag" target="form" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_tri" value="quiz reusa motor · RF-E4.6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#00838F;strokeWidth=2;dashed=1;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#00565E;exitX=0.3;exitY=0;entryX=0.5;entryY=1;" parent="1" source="tri" target="form" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="554" y="470" />
+              <mxPoint x="600" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_chk" value="check-in reusa motor · RF-E5.13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#00838F;strokeWidth=2;dashed=1;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#00565E;exitX=0;exitY=0.5;entryX=0.6;entryY=0;" parent="1" source="disp" target="form" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ag_sched" value="encontro agenda sessão · RF-E7.1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#3949AB;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#26327A;exitX=1;exitY=0.3;entryX=0.3;entryY=1;" parent="1" source="etap" target="disp" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1107" y="368" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_form" value="anexa formulário · RF-E7.2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#2E7D46;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#1B5E2E;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" parent="1" source="etap" target="form" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="865" y="300" />
+              <mxPoint x="600" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_tri" value="anexa trilha · RF-E7.2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#2E7D46;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#1B5E2E;exitX=0.15;exitY=1;entryX=0.7;entryY=0;" parent="1" source="etap" target="tri" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="798" y="510" />
+              <mxPoint x="626" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_selo" value="anexa selo · RF-E7.2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#2E7D46;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#1B5E2E;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" parent="1" source="etap" target="selo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="884" y="530" />
+              <mxPoint x="860" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_etap" value="gatilho encontro · RF-E9.2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#E65100;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#A03A00;exitX=1;exitY=0.7;entryX=0;entryY=0.5;" parent="1" source="etap" target="msg" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="392" />
+              <mxPoint x="1010" y="497" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_sched" value="gatilho sessão · RF-E5.7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#E65100;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#A03A00;exitX=0.6;exitY=1;entryX=0.6;entryY=0;" parent="1" source="disp" target="msg" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tri" value="conclusão concede · RF-E8.2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#6A1B9A;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#4A1270;exitX=1;exitY=0.5;entryX=0;entryY=0.4;" parent="1" source="tri" target="selo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cert" value="jornada concluída concede certificado · RF-E11.3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#6A1B9A;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#4A1270;exitX=0.9;exitY=1;entryX=0.9;entryY=0;" parent="1" source="etap" target="selo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="410" />
+              <mxPoint x="970" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p_tar" value="plano vira tarefas · RF-E10.3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#8B5E3C;strokeWidth=2;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#5A3B22;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" source="diag" target="tar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i_tri" value="serve mídia · RF-E6.2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#9E9E9E;strokeWidth=1.5;dashed=1;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#757575;exitX=1;exitY=0.8;entryX=0.5;entryY=0;" parent="1" source="tri" target="midia" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="603" />
+              <mxPoint x="720" y="850" />
+              <mxPoint x="730" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i_cert" value="emite PDF do certificado · RF-E11.3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#9E9E9E;strokeWidth=1.5;dashed=1;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#757575;exitX=0.3;exitY=1;entryX=0.6;entryY=0;" parent="1" source="selo" target="midia" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="824" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_ac" value="papel / usuário · RF-E1.4a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=1;html=1;endArrow=block;strokeColor=#9E9E9E;strokeWidth=1.5;dashed=1;fontSize=9;labelBackgroundColor=#FFFFFF;fontColor=#757575;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="auth" target="cad" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legenda" value="&lt;b&gt;Vista de acoplamento — nomes canônicos&lt;/b&gt;&lt;div style=&#39;text-align:left;font-size:10px;&#39;&gt;Derivou o estilo (1 quantum). &lt;font color=&#39;#00838F&#39;&gt;╌ reusa o motor&lt;/font&gt; · &lt;font color=&#39;#2E7D46&#39;&gt;━ anexa (Journey)&lt;/font&gt; · &lt;font color=&#39;#E65100&#39;&gt;━ gatilho de mensagem&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#6A1B9A&#39;&gt;━ concede/gera&lt;/font&gt; · &lt;font color=&#39;#3949AB&#39;&gt;━ agenda&lt;/font&gt; · &lt;font color=&#39;#8B5E3C&#39;&gt;━ plano→tarefas&lt;/font&gt; · &lt;font color=&#39;#9E9E9E&#39;&gt;╌ dep./infra&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Form&lt;/b&gt; = só afferent (núcleo reusado). &lt;b&gt;Journey&lt;/b&gt; = só efferent (orquestrador).&lt;br&gt;Base multi-tenant (Auth · Account · Scope) atravessa todos — não desenhada.&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;dashed=1;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="600" width="440" height="220" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

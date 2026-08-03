@@ -94,6 +94,7 @@ Auto-agendamento com regras + registro do que foi combinado. A gestão das sess�
 | <a id="rf-e5-10">RF-E5.10</a> | Enquanto a agenda Google estiver conectada, o sistema deve considerar seus horários ocupados para bloquear slots em conflito. | Sistema | Média | [RF-E5.8](#rf-e5-8), [RF-E5.1](#rf-e5-1) | Decisão de projeto | Horário ocupado no Google não aparece como slot disponível. |
 | <a id="rf-e5-11">RF-E5.11</a> | O sistema deve permitir ao admin cancelar ou remover sessões e criar, editar ou remover a disponibilidade. | Admin | Média | [RF-E5.1](#rf-e5-1) | Decisão de projeto | Admin cancela sessão e gerencia os slots. |
 | <a id="rf-e5-12">RF-E5.12</a> | Se um cliente tentar cancelar, editar ou remover uma sessão ou a disponibilidade, então o sistema deve negar. | Cliente | Média | [RF-E5.11](#rf-e5-11) | Decisão de projeto | Cliente não cancela/edita/remove sessão nem slot. |
+| <a id="rf-e5-13">RF-E5.13</a> | O sistema deve permitir ao cliente responder um check-in (formulário) vinculado a uma sessão online, com estrutura própria distinta do check-in presencial de eventos. | Cliente | Média | [RF-E5.2](#rf-e5-2), [RF-E4.3](#rf-e4-3) | [Reunião de exploração de arquitetura 02/08](../reunioes/exploracao-arquitetura-2026-08-02.md) | Responder um check-in atrelado a uma sessão agendada. |
 
 ## E6 — Publicar conteúdo e trilhas de reforço
 
@@ -155,7 +156,7 @@ Para formações presenciais. Sem pagamento na plataforma.
 |---|---|---|---|---|---|---|
 | <a id="rf-e11-1">RF-E11.1</a> | O sistema deve registrar a presença do cliente em eventos por check-in (QR/scan), associando a participação. | Cliente | Média | [RF-E1.3](#rf-e1-3) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Escanear registra a presença do cliente no evento. |
 | <a id="rf-e11-2">RF-E11.2</a> | O sistema deve gerar um relatório de presença exportável para o cliente. | Admin | Média | [RF-E11.1](#rf-e11-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Exportar a lista de presença de um evento. |
-| <a id="rf-e11-3">RF-E11.3</a> | Quando um cliente cumpre a carga horária, o sistema deve gerar um certificado em PDF. | Sistema | Baixa | [RF-E11.1](#rf-e11-1) | [Reunião de discovery - produtos nuree 29/07](../reunioes/discovery-produtos-2026-07-29.md) | Cumprir a carga gera o certificado em PDF. |
+| <a id="rf-e11-3">RF-E11.3</a> | Quando um cliente conclui a jornada (cumpre os critérios de conclusão — presença em eventos, trilhas e quizzes concluídos), o sistema deve conceder um certificado em PDF, pelo mesmo mecanismo de concessão dos selos. | Sistema | Baixa | [RF-E11.1](#rf-e11-1), [RF-E7.4](#rf-e7-4), [RF-E8.2](#rf-e8-2) | [Reunião de exploração de arquitetura 02/08](../reunioes/exploracao-arquitetura-2026-08-02.md) | Concluir a jornada concede o certificado em PDF. |
 
 ## E12 — Trocar documentos por empresa
 

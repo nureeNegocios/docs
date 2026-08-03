@@ -106,6 +106,74 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 
 ---
 
+## Sessão — 2026-08-03
+
+### 6. Refinamento dos componentes (colapsos de entity-trap)
+
+- `Itens` colapsa em `Trilhas`; e `Sementeira`, `Registro do combinado`, `Critérios`, `Pastas`,
+  `Remetente`, `Produto`, `Check-in (form)` colapsam nos respectivos donos.
+- **`Certificado` não é componente** — é artefato do **mesmo mecanismo de concessão** dos selos
+  (critério "jornada concluída"); a `Presença` alimenta via conclusão de etapa.
+- Dois check-ins **distintos**: **presencial** ([RF-E11.1](../app-nuree/requisitos.md#rf-e11-1), QR) e
+  **de sessão online** (novo [RF-E5.13](../app-nuree/requisitos.md#rf-e5-13)); ambos reusam o motor
+  genérico de `Form` (scoring de quiz mora em `Trilhas`, não no motor).
+- `Etapas` → renomeado **`Jornada`** (etapas são entidade interna).
+- **Nomes canônicos em inglês** (EN · singular · PascalCase): `Form`, `Journey`, `Track`,
+  `Diagnostic`, `Recognition`, `Task`, `Cycle`, `Session`, `Scheduling`, `CalendarSync`, `Checkin`,
+  `Attendance`, `Messaging`, `Document`, `Account`, `Auth`, `Media`, `Scope`. Tensão com
+  [RNF-5](../app-nuree/requisitos.md#rnf-5): código EN, rotas/UI em PT.
+
+### 7. Escolha do estilo (Ford/Richards, Cap. 18)
+
+Rodamos *Choosing the Appropriate Architecture Style*. Os pré-requisitos já estavam preenchidos;
+o trabalho foi nas **três determinações**.
+
+- **A — quantum de deploy: UM.** Monólito **particionado por domínio** (o "modular monolith", que
+  **não está no catálogo dos 8 estilos** — é o buraco entre *Layered* (técnico) e *Service-based*
+  (domínio, distribuído)).
+    - `Messaging` fica como **módulo + worker** (mesma imagem, `node worker`), **não serviço**: as
+      características divergentes (Confiabilidade/retry, isolamento da falha do provider, escala de
+      rajada) já vêm do worker (nível *b*); os ganhos exclusivos de um serviço (deploy independente,
+      reuso externo) **não têm driver**. Um serviço só = imposto de distribuído cheio por ganho marginal.
+    - `Media` via **presigned URL** (MinIO serve direto) → sem serviço.
+    - `Document` = módulo (sem característica operacional divergente).
+- **B — dados:** **Postgres único**, **tabelas por módulo** (propriedade/isolamento lógico, não
+  *integration database*); Redis/BullMQ (fila); MinIO (blobs).
+- **C — comunicação:** **sync in-process por padrão** (a composição semântica prospera assim);
+  **async só no worker** — jobs de domínio (rollover [E3.9](../app-nuree/requisitos.md#rf-e3-9),
+  PDF de certificado [E11.3](../app-nuree/requisitos.md#rf-e11-3), convite
+  [E2.8](../app-nuree/requisitos.md#rf-e2-8)) e WhatsApp.
+
+**Rota preservada:** service-based é a evolução barata se um driver aparecer (extrair `Messaging` ou
+`Document`). k8s de reserva; hoje Compose basta ([RC-2](../app-nuree/requisitos.md#rc-2) confirmado).
+
+**Nota de taxonomia:** dos 8 estilos, os monolíticos (Layered/Pipeline/Microkernel) são
+technical-partitioning ou de propósito específico; o único que casa com domain-partitioning é
+**Service-based** — do qual o nosso monólito domain-partitioned é o degrau imediatamente abaixo.
+
+### 8. Eixo de conclusão — coreografia in-process
+
+Como as reações "quando X → então Y" (conceder selo/certificado, disparar mensagem) acontecem:
+**coreografia por evento, não orquestração**. Decidido *por fronteira*:
+
+- **Reações internas** (selo/certificado/maturidade/progresso) → **evento de domínio in-process
+  síncrono** (`@nestjs/event-emitter`), na mesma transação (ACID, Postgres compartilhado).
+- **Efeitos externos/temporais** (mensagem) → **fila durável** (`Messaging`).
+
+`Journey` **emite** (`EtapaConcluida`/`JornadaConcluida`), não chama `Recognition`/`Messaging` →
+some o risco de god-module. `Recognition` avalia **os próprios critérios** com os dados do evento →
+não fura a propriedade de tabelas. Catálogo de eventos em
+[`componentes.md`](../app-nuree/componentes.md); blindagem em
+[`fitness-functions.md`](../app-nuree/fitness-functions.md) (FF-7, anti-ciclo).
+
+**Não é EDA** (estilo) — é um *dispatcher* in-process (observer); continua 1 quantum, sync. Semântica
+de evento no domínio ≠ arquitetura orientada a eventos.
+
+Refinamento de granularidade nesta rodada: `Checkin` fundiu em `Scheduling`; `Task`+`Cycle` viraram
+`Task`; "clonar template" saiu de `Account` (é um `clone()` em cada builder).
+
+---
+
 ## Decisões — status
 
 | Decisão | Status |
@@ -119,16 +187,31 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 | Produtos como dimensão de composição (não grupo) | Travada |
 | Merge de Mentoria/Eventos na Jornada; Agendamento como suporte | Travada |
 | Documentos como função (E12); Mídia como infra | Travada |
+| **Estilo: monólito particionado por domínio (1 quantum) + worker async** | Travada (03/08) |
+| `Messaging` como módulo+worker (nível *b*), não serviço | Travada (03/08) |
+| Dados: Postgres único, tabelas por módulo | Travada (03/08) |
+| Sync in-process por padrão; async só no worker | Travada (03/08) |
+| Eixo de conclusão: coreografia por **evento in-process** (reações internas) + **fila** (Messaging) | Travada (03/08) |
+| Granularidade: `Checkin`→`Scheduling`; `Task`+`Cycle`→`Task`; clone por builder | Travada (03/08) |
+| `Account` = tenancy + user; console sai → `Reporting` (read-model) + hub de UI | Travada (03/08) |
+| `Media` via presigned URL (sem serviço); `Document` = módulo | Travada (03/08) |
+| Certificado = concessão (não é componente); `Itens`→`Trilhas`; check-in presencial vs online | Travada (03/08) |
+| Motor de `Form` único e genérico; verticais (quiz/check-in/diagnóstico) reusam | Travada (03/08) |
+| Nomes canônicos em inglês | Aprovada por ora |
 
 ## Em aberto
 
-- **Estilo de deploy:** monólito modular vs service-based (o eixo é o quantum de deploy).
-  Orquestração (Docker Compose vs k8s) influencia o custo de separar funções.
-- **Formulários:** motor único vs motores separados que reusam um núcleo.
-- **Extensibilidade e Evolutividade:** dirigentes ou suporte?
-- **Plano de Ação:** fica em Avaliação ou vira ponte para Execução?
-- **Mecanismo dos eventos:** observer in-process vs fila durável — decidir *por fronteira*.
+- **Extensibilidade e Evolutividade:** dirigentes ou suporte? (a ratificar)
 - **Documentos:** detalhar (versionamento? tipos de arquivo? limites?).
+- **Documentar** cada módulo em detalhe (contratos/tabelas) quando entrar em desenvolvimento.
+
+## Artefatos desta exploração
+
+- [`componentes.md`](../app-nuree/componentes.md) — módulos (nomes canônicos EN), ações e relações.
+- [`fitness-functions.md`](../app-nuree/fitness-functions.md) — testes que protegem as decisões.
+- `app-nuree/topologia.drawio` — topologia-alvo (1 quantum + worker + infra).
+- `app-nuree/componentes-flat.drawio` — vista de acoplamento (derivou o estilo).
+- `app-nuree/componentes.drawio` — **anti-pattern** preservado (entity-trap por caixa).
 
 ## Referências
 
