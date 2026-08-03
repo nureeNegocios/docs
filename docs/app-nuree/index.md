@@ -15,6 +15,19 @@ Sistema da Nuree Negócios. Plataforma multi-produto composta de **módulos comp
 - **[Fitness functions](arquitetura/fitness-functions.md)** — testes de arquitetura que protegem as decisões.
 - **[Diagramas](arquitetura/diagramas.md)** — acoplamento e topologia atuais (+ os anti-patterns preservados).
 
+## Stack
+
+| Camada | Escolha |
+|---|---|
+| Frontend | Next.js (consome a API REST) |
+| API + worker | NestJS (mesma imagem, modo `api`/`worker`) |
+| DB | Postgres + Prisma (tabelas por módulo via repositories) |
+| Fila / cache | Redis + BullMQ |
+| Blob | MinIO (presigned URL) |
+| Proxy / deploy | Caddy · Docker Compose |
+| Auth | JWT (access+refresh) + Google OAuth |
+| Integrações | WhatsApp *(provider a decidir)* · Google (OAuth + Calendar) |
+
 ## Em breve
 
 Conforme polimos o desenho antes de implementar, entram aqui:
