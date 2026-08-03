@@ -86,9 +86,6 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 
 ### 4. Arquiteturas consideradas
 
-> A decisão de **particionar por domínio** não entra aqui — particionamento não é um estilo de
-> arquitetura. Está registrada na etapa 2 e na tabela de decisões.
-
 | Estilo | Levantado por | Situação |
 |---|---|---|
 | **Monólito modular** (domínio) | simplicidade; ACID na composição; isolamento num ponto único; solo dev; preserva a rota de migração | Favorecido pelas características — **não cravado**. |
