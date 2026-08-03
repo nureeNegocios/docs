@@ -24,17 +24,20 @@ O que realmente reforma o particionamento de componentes.
 | **Segurança** (isolamento multi-tenant + autorização) | [RF-E1.6](requisitos.md#rf-e1-6), [RF-E1.7](requisitos.md#rf-e1-7), [RNF-2](requisitos.md#rnf-2), [RNF-3](requisitos.md#rnf-3), [RNF-4](requisitos.md#rnf-4) | Quase toda ação do Cliente é presa ao escopo. Impõe um ponto único de aplicação de escopo que todo componente atravessa. |
 | **Configurabilidade** | [RNF-1](requisitos.md#rnf-1) | Admin cria formulário/jornada/trilha/selo sem deploy. Impõe o padrão definição → aplicação → instância (builder como dado). |
 | **Composabilidade** (reuso + composição) | domínio (motor único de formulários; produtos compõem motores), [RNF-1](requisitos.md#rnf-1) | Diagnóstico reusa Formulários; a Jornada compõe formulário+trilha+selo; um produto é uma composição de funções. Empurra o corte **por domínio/função**. |
-| **Evolutibilidade** *(acrescentada nesta rodada)* | os 4 produtos + crescimento da plataforma; [RNF-7](requisitos.md#rnf-7) | Adicionar uma **nova** capacidade (ex.: Documentos) barato, sem quebrar as existentes. |
+| **Extensibilidade** | os 4 produtos; [E12](requisitos.md) como evidência recente | Acrescentar uma **nova** capacidade (função inteira) barato, sem quebrar as existentes. |
+| **Evolutividade** | plataforma multi-produto de longo prazo; [RNF-7](requisitos.md#rnf-7) | A arquitetura como um todo mudar com segurança ao longo do tempo — guarda-chuva das anteriores. |
 
-As três primeiras foram travadas antes; **Evolutibilidade** foi percebida como implícita e
-entra agora. Repara que Configurabilidade, Composabilidade e Evolutibilidade são **três faces
-da mesma virtude — mudança barata**, em níveis diferentes:
+As três primeiras foram travadas antes; **Extensibilidade** e **Evolutividade** entraram
+depois. Configurabilidade, Composabilidade e Extensibilidade são **três faces da mesma virtude
+— mudança barata**, em níveis diferentes, e **Evolutividade** é o guarda-chuva que garante que
+elas sigam baratas conforme o sistema cresce:
 
 - **Configurabilidade** — mudança por **dado**, sem código (novo formulário).
 - **Composabilidade** — mudança por **recomposição** do que já existe (novo produto a partir dos motores).
-- **Evolutibilidade** — mudança por **código novo** isolado (nova função inteira).
+- **Extensibilidade** — mudança por **código novo** isolado (nova função inteira, como Documentos).
+- **Evolutividade** — a arquitetura como um todo **mudar com segurança ao longo do tempo**.
 
-E a **Segurança** é a guarda que atravessa as três: por mais fácil que seja mudar, nada
+E a **Segurança** é a guarda que atravessa todas: por mais fácil que seja mudar, nada
 pode vazar escopo.
 
 ---
@@ -72,7 +75,7 @@ registradas para não voltarem sem querer.
 
 | Candidata | Por que sai |
 |---|---|
-| **Reusabilidade** e **Extensibilidade** (avulsas) | Absorvidas por **Composabilidade** e **Evolutibilidade**. Mantê-las separadas seria contar a mesma coisa três vezes. |
+| **Reusabilidade** (avulsa) | Absorvida por **Composabilidade** — mantê-la separada seria contar a mesma coisa duas vezes. |
 | **Interoperabilidade** (como dirigente) | OpenAPI/mobile ([RNF-7](requisitos.md#rnf-7)) e integrações externas ([RC-5](requisitos.md#rc-5)) são reais, mas **não moldam o particionamento** — são contrato de borda. Vale como suporte, não como dirigente. |
 
 ---

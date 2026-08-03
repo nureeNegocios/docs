@@ -35,12 +35,12 @@ Ordem seguida (Ford/Richards, *Fundamentals of Software Architecture*):
 Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas → poda. Detalhe em
 [características de arquitetura](../app-nuree/caracteristicas.md).
 
-- **Dirigentes:** Segurança, Configurabilidade, Composabilidade — e **Evolutibilidade**,
-  percebida como implícita mais tarde.
+- **Dirigentes:** Segurança, Configurabilidade, Composabilidade — e **Extensibilidade** e
+  **Evolutividade** (a família de "mudança barata"), percebidas depois.
 - **Rebaixadas de propósito:** escalabilidade, performance (*exceto* streaming de mídia — que
   é problema de servir blob, local ao componente de Mídia), localização.
-- **Descartadas:** reusabilidade/extensibilidade avulsas (absorvidas por Composabilidade e
-  Evolutibilidade) e interoperabilidade como dirigente (é contrato de borda, não molda partição).
+- **Descartadas:** reusabilidade avulsa (absorvida por Composabilidade) e interoperabilidade
+  como dirigente (é contrato de borda, não molda partição).
 
 ### 2. Componentes — critério e refinamento
 
@@ -112,7 +112,7 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 |---|---|
 | Ordem do processo (características → componentes → …) | Travada |
 | Dirigentes: Segurança, Configurabilidade, Composabilidade | Travada |
-| Evolutibilidade como característica | Adicionada — tier (dirigente vs suporte) a ratificar |
+| Extensibilidade e Evolutividade como características | Adicionadas — tier (dirigente vs suporte) a ratificar |
 | Escala/performance/localização rebaixadas | Travada |
 | Particionar por **domínio** (não técnico) | Travada |
 | Agrupar (dentro de domínio) por **função de negócio** | Travada |
@@ -125,7 +125,7 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 - **Estilo de deploy:** monólito modular vs service-based (o eixo é o quantum de deploy).
   Orquestração (Docker Compose vs k8s) influencia o custo de separar funções.
 - **Formulários:** motor único vs motores separados que reusam um núcleo.
-- **Evolutibilidade:** dirigente ou suporte?
+- **Extensibilidade e Evolutividade:** dirigentes ou suporte?
 - **Plano de Ação:** fica em Avaliação ou vira ponte para Execução?
 - **Mecanismo dos eventos:** observer in-process vs fila durável — decidir *por fronteira*.
 - **Documentos:** detalhar (versionamento? tipos de arquivo? limites?).
