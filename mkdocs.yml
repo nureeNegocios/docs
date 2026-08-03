@@ -63,10 +63,10 @@ nav:
       - Requisitos: app-nuree/requisitos.md
       - Ações do sistema: app-nuree/acoes.md
       - Arquitetura:
-          - Características: app-nuree/caracteristicas.md
-          - Componentes: app-nuree/componentes.md
-          - Fitness functions: app-nuree/fitness-functions.md
-          - Diagramas: app-nuree/diagramas.md
+          - Características: app-nuree/arquitetura/caracteristicas.md
+          - Componentes: app-nuree/arquitetura/componentes.md
+          - Fitness functions: app-nuree/arquitetura/fitness-functions.md
+          - Diagramas: app-nuree/arquitetura/diagramas.md
       - Reuniões:
           - Discovery - produtos (29/07/2026): reunioes/discovery-produtos-2026-07-29.md
           - Exploração de arquitetura (02/08/2026): reunioes/exploracao-arquitetura-2026-08-02.md

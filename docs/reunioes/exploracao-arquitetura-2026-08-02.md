@@ -33,7 +33,7 @@ Ordem seguida (Ford/Richards, *Fundamentals of Software Architecture*):
 ### 1. Características a partir dos requisitos
 
 Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas → poda. Detalhe em
-[características de arquitetura](../app-nuree/caracteristicas.md).
+[características de arquitetura](../app-nuree/arquitetura/caracteristicas.md).
 
 - **Dirigentes:** Segurança, Configurabilidade, Composabilidade — e **Extensibilidade** e
   **Evolutividade** (a família de "mudança barata"), percebidas depois.
@@ -65,7 +65,7 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
       virou o épico [E12](../app-nuree/requisitos.md).
 - **Resultado: 9 funções** — Contas & Contratos, Execução do trabalho, Avaliação & Diagnóstico,
   Jornada, Agendamento *(suporte)*, Aprendizagem, Reconhecimento, Comunicação, Documentos.
-  Ver `app-nuree/componentes.drawio`.
+  Ver `app-nuree/arquitetura/componentes.drawio`.
 
 !!! warning "Ainda não são 'os componentes'"
     Os blocos de hoje são um **mapa de domínio por função de negócio**, não o resultado do
@@ -163,8 +163,8 @@ Como as reações "quando X → então Y" (conceder selo/certificado, disparar m
 `Journey` **emite** (`EtapaConcluida`/`JornadaConcluida`), não chama `Recognition`/`Messaging` →
 some o risco de god-module. `Recognition` avalia **os próprios critérios** com os dados do evento →
 não fura a propriedade de tabelas. Catálogo de eventos em
-[`componentes.md`](../app-nuree/componentes.md); blindagem em
-[`fitness-functions.md`](../app-nuree/fitness-functions.md) (FF-7, anti-ciclo).
+[`componentes.md`](../app-nuree/arquitetura/componentes.md); blindagem em
+[`fitness-functions.md`](../app-nuree/arquitetura/fitness-functions.md) (FF-7, anti-ciclo).
 
 **Não é EDA** (estilo) — é um *dispatcher* in-process (observer); continua 1 quantum, sync. Semântica
 de evento no domínio ≠ arquitetura orientada a eventos.
@@ -207,13 +207,13 @@ Refinamento de granularidade nesta rodada: `Checkin` fundiu em `Scheduling`; `Ta
 
 ## Artefatos desta exploração
 
-- [`componentes.md`](../app-nuree/componentes.md) — módulos (nomes canônicos EN), ações e relações.
-- [`fitness-functions.md`](../app-nuree/fitness-functions.md) — testes que protegem as decisões.
-- `app-nuree/topologia.drawio` — topologia-alvo (1 quantum + worker + infra).
-- `app-nuree/componentes-flat.drawio` — vista de acoplamento (derivou o estilo).
-- `app-nuree/componentes.drawio` — **anti-pattern** preservado (entity-trap por caixa).
+- [`componentes.md`](../app-nuree/arquitetura/componentes.md) — módulos (nomes canônicos EN), ações e relações.
+- [`fitness-functions.md`](../app-nuree/arquitetura/fitness-functions.md) — testes que protegem as decisões.
+- `app-nuree/arquitetura/topologia.drawio` — topologia-alvo (1 quantum + worker + infra).
+- `app-nuree/arquitetura/componentes-flat.drawio` — vista de acoplamento (derivou o estilo).
+- `app-nuree/arquitetura/componentes.drawio` — **anti-pattern** preservado (entity-trap por caixa).
 
 ## Referências
 
-- [Requisitos](../app-nuree/requisitos.md) · [Características](../app-nuree/caracteristicas.md) · [Ações](../app-nuree/acoes.md)
-- `app-nuree/componentes.drawio` — mapa de funções de negócio e suas relações
+- [Requisitos](../app-nuree/requisitos.md) · [Características](../app-nuree/arquitetura/caracteristicas.md) · [Ações](../app-nuree/acoes.md)
+- `app-nuree/arquitetura/componentes.drawio` — mapa de funções de negócio e suas relações

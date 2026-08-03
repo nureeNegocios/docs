@@ -6,7 +6,7 @@ hide:
 # Fitness functions — app-nuree
 
 Testes de arquitetura que **protegem** as características dirigentes e as decisões de estilo
-(ver [diário de arquitetura](../reunioes/exploracao-arquitetura-2026-08-02.md)). Cada uma existe
+(ver [diário de arquitetura](../../reunioes/exploracao-arquitetura-2026-08-02.md)). Cada uma existe
 para que uma decisão não se degrade em silêncio conforme o código cresce.
 
 Classificação (Ford/Richards): **atomic** (um aspecto) vs **holistic** (combinação); **static**
@@ -19,7 +19,7 @@ produção).
 
 | | |
 |---|---|
-| **Protege** | Segurança / `Scope` — [RNF-2](requisitos.md#rnf-2), [E1.6](requisitos.md#rf-e1-6)/[E1.7](requisitos.md#rf-e1-7) |
+| **Protege** | Segurança / `Scope` — [RNF-2](../requisitos.md#rnf-2), [E1.6](../requisitos.md#rf-e1-6)/[E1.7](../requisitos.md#rf-e1-7) |
 | **Tipo** | atomic · static + dynamic · triggered + continuous |
 
 - **Static:** regra que **proíbe consulta ao ORM fora da camada de escopo** — todo acesso passa por
@@ -85,7 +85,7 @@ produção).
 
 | | |
 |---|---|
-| **Protege** | [RNF-5](requisitos.md#rnf-5) — rotas/UI em PT, código em EN |
+| **Protege** | [RNF-5](../requisitos.md#rnf-5) — rotas/UI em PT, código em EN |
 | **Tipo** | atomic · static · triggered |
 
 - Lint que as **rotas expostas** estão em português; identificadores de módulo/código em inglês

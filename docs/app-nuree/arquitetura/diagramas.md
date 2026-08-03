@@ -8,7 +8,7 @@ hide:
 O desenho de componentes do app-nuree. Dois diagramas são a **fonte da verdade atual**; dois
 ficam preservados **de propósito como anti-patterns** — o registro do caminho até aqui, para não
 repetir os erros. O raciocínio completo está no
-[diário de exploração](../reunioes/exploracao-arquitetura-2026-08-02.md).
+[diário de exploração](../../reunioes/exploracao-arquitetura-2026-08-02.md).
 
 ---
 

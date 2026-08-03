@@ -10,10 +10,10 @@ Sistema da Nuree Negócios. Plataforma multi-produto composta de **módulos comp
 ## Nesta seção
 
 - **[Requisitos](requisitos.md)** — especificação funcional e não-funcional, em formato EARS com rastreabilidade.
-- **[Características](caracteristicas.md)** — as *-ilities* dirigentes que reformam o desenho.
-- **[Componentes](componentes.md)** — os módulos, ações, relações e eventos de domínio (fonte da verdade).
-- **[Fitness functions](fitness-functions.md)** — testes de arquitetura que protegem as decisões.
-- **[Diagramas](diagramas.md)** — acoplamento e topologia atuais (+ os anti-patterns preservados).
+- **[Características](arquitetura/caracteristicas.md)** — as *-ilities* dirigentes que reformam o desenho.
+- **[Componentes](arquitetura/componentes.md)** — os módulos, ações, relações e eventos de domínio (fonte da verdade).
+- **[Fitness functions](arquitetura/fitness-functions.md)** — testes de arquitetura que protegem as decisões.
+- **[Diagramas](arquitetura/diagramas.md)** — acoplamento e topologia atuais (+ os anti-patterns preservados).
 
 ## Em breve
 
