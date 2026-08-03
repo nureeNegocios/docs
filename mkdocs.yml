@@ -58,6 +58,7 @@ nav:
   - Início: index.md
   - Convenções:
       - Escrita de requisitos: convencoes/requisitos.md
+      - Estrutura de documento: convencoes/documentos.md
   - app-nuree:
       - Visão geral: app-nuree/index.md
       - Requisitos: app-nuree/requisitos.md
