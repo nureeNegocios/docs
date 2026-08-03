@@ -19,6 +19,10 @@ propósito. Detalhe textual em [Componentes](componentes.md); o porquê no
 
 ![Topologia do app-nuree](topologia.drawio.png)
 
+**Componentes (C4)** — a estrutura em System → Container → Componentes, com **um schema por módulo**.
+
+![Componentes C4 do app-nuree](container-c4.drawio.png)
+
 ## Anti-patterns
 
 **v1 — *entity trap*.** Uma caixa por entidade; ainda sem o conceito de componente.
