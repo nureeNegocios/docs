@@ -44,12 +44,13 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 
 ### 2. Componentes — critério e refinamento
 
-- **Primeira tentativa falhou:** misturei três lentes (épicos + entidades + ações), o que deu
-  uma colcha de retalhos incoerente. Corrigido ao escolher **uma** lente.
-- **Critério escolhido: função de negócio.** Motivos do Gabriel: modela o negócio (não detalhe
-  de implementação); fácil migrar para distribuído depois; equipe = 1 (technical partitioning
-  não traz ganho de divisão por time); facilita conversar com a equipe não-técnica; e é o corte
-  que ele quer aprender na prática.
+- **Decisão — particionar por domínio (não técnico).** Motivos do Gabriel: modela o negócio
+  (não um detalhe de implementação); fácil migrar para distribuído depois; equipe = 1
+  (technical partitioning não traz o ganho de dividir por time); facilita conversar com a
+  equipe não-técnica; e é o corte que ele quer aprender na prática.
+- **Primeira tentativa de blocos falhou:** misturei três lentes (épicos + entidades + ações),
+  o que deu uma colcha de retalhos incoerente. Corrigido ao escolher **uma** lente.
+- **Lente escolhida: função de negócio** (dentro do particionamento por domínio).
 - **Produtos (Gestão · Pessoas · Lab · Pulse) não são eixo de agrupamento** — são
   **composição** de funções (uma dimensão), pelos próprios requisitos: `Produto` é catálogo,
   `Programa` é a instância ([RF-E1.1](../app-nuree/requisitos.md#rf-e1-1), [RF-E1.2](../app-nuree/requisitos.md#rf-e1-2)),
@@ -85,9 +86,11 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 
 ### 4. Arquiteturas consideradas
 
+> A decisão de **particionar por domínio** não entra aqui — particionamento não é um estilo de
+> arquitetura. Está registrada na etapa 2 e na tabela de decisões.
+
 | Estilo | Levantado por | Situação |
 |---|---|---|
-| Particionamento **técnico** vs **domínio** | ponto de partida | Escolhido **domínio**. |
 | **Monólito modular** (domínio) | simplicidade; ACID na composição; isolamento num ponto único; solo dev; preserva a rota de migração | Favorecido pelas características — **não cravado**. |
 | **Service-based** (meio-termo) | flexível; DB único mantém ACID; variantes de topologia (UI/DB/API/lib, Fig 13-2..13-7) | Eixo real = **quantum de deploy**, não o banco. Sem ganho para solo dev + escala rebaixada. **Em aberto.** |
 | **Microkernel** | (eu tendenciei para cá) | **Rejeitado** como enquadramento; o "núcleo" que propus era coarse-grained demais. |
@@ -95,8 +98,10 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 
 ### 5. Insights que ficaram
 
-- **Event bus / EDA é estilo de comunicação, não arquitetura** — vem *depois* das características.
-- **Semântica de evento nos requisitos não obriga arquitetura de evento.**
+- **Mecanismo × estilo:** um *event bus* é um mecanismo de comunicação; *event-driven
+  architecture* **é um estilo de arquitetura**. A escolha do estilo vem *depois* das
+  características — e as nossas não a pedem.
+- **Semântica de evento nos requisitos não obriga adotar EDA.**
 - **Streaming** é entrega de mídia, não EDA.
 - O **motor de formulários** é reusado por quiz, check-in, diagnóstico, Mergulho e PDI — logo
   não fala só com Tarefas. A granularidade (motor único vs motores que reusam um núcleo)
@@ -112,7 +117,8 @@ Varredura dos [requisitos](../app-nuree/requisitos.md) → lista de candidatas �
 | Dirigentes: Segurança, Configurabilidade, Composabilidade | Travada |
 | Evolutibilidade como característica | Adicionada — tier (dirigente vs suporte) a ratificar |
 | Escala/performance/localização rebaixadas | Travada |
-| Particionar por **função de negócio** | Travada |
+| Particionar por **domínio** (não técnico) | Travada |
+| Agrupar (dentro de domínio) por **função de negócio** | Travada |
 | Produtos como dimensão de composição (não grupo) | Travada |
 | Merge de Mentoria/Eventos na Jornada; Agendamento como suporte | Travada |
 | Documentos como função (E12); Mídia como infra | Travada |
