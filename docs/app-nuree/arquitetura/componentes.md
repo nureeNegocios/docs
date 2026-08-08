@@ -35,6 +35,8 @@ Roda num **worker** (mesma imagem, `node worker`), que também executa os jobs d
 de `Task` ([E3.9](../requisitos.md#rf-e3-9)), PDF de `Recognition` ([E11.3](../requisitos.md#rf-e11-3)),
 convite de `Account` ([E2.8](../requisitos.md#rf-e2-8)).
 
+**E-mail transacional** (código OTP de `Auth` — [E1.4/1.5](../requisitos.md#rf-e1-4); convite e link de cadastro de `Account` — [E2.8](../requisitos.md#rf-e2-8)/[2.9](../requisitos.md#rf-e2-9)) sai por **Resend**, também pelo worker. `Messaging` cobre só WhatsApp.
+
 ## Infra e leitura (fora do domínio)
 
 | | Papel | RF |
