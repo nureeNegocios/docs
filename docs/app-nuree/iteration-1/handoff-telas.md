@@ -16,7 +16,7 @@ Estas telas cobrem a **Iteração 1** do roadmap, entregue como dois épicos no 
 - **[#3 · E1 — Login, papéis e acesso por empresa/programa](https://github.com/nureeNegocios/app/issues/3)** — telas de **Auth** + **Home**.
 - **[#4 · E2 — Administrar empresas, usuários e programas](https://github.com/nureeNegocios/app/issues/4)** — **console admin** + **cadastro por link**.
 
-Você (agente) é responsável pelo **frontend** destes dois épicos: implementar as telas deste handoff sobre o design system, consumindo a API. O **backend** correspondente deverá **já estar implementado** quando você começar — consuma os endpoints existentes e confirme contratos/rotas reais antes de fixar chamadas; não recrie lógica de domínio no front.
+Os épicos englobam **backend e frontend**. Este handoff é a especificação do **frontend**: telas **pixel-perfect** sobre o design system, prontas para implementar direto a partir dele. Ao ligar as telas, consuma a API e confirme os contratos/rotas reais; não recrie lógica de domínio no front.
 
 !!! warning "Os critérios de #3/#4 ainda citam senha"
     Os checklists das issues nasceram antes da decisão de **auth passwordless por código (OTP)**. Onde lê "e-mail e senha", "reset de senha" ou "troca de senha no primeiro acesso", vale o modelo atual dos [Requisitos](../requisitos.md#rf-e1-4): código OTP + confirmação de e-mail.
