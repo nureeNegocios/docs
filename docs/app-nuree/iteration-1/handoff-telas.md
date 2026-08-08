@@ -99,7 +99,7 @@ Console de tenancy ([E2](../requisitos.md)), organizado no Figma em 4 seções n
 | Link de cadastro | `347-3325` | usuários → botão **"Link de cadastro"** ao lado de "Novo usuário"; escolhe empresa e gera o link aberto | [E2.9](../requisitos.md#rf-e2-9), [E2.10](../requisitos.md#rf-e2-10) |
 | Novo programa | `296-1182` | programas · **passo 1 de 2** (indicador de etapa no topo) | [E2.3](../requisitos.md#rf-e2-3) |
 | Matricular participantes | `296-1331` | **passo 2 de 2** do fluxo acima (`Continuar` → matrícula → `Criar programa`) → gera Participação | [E1.3](../requisitos.md#rf-e1-3), [E2.3](../requisitos.md#rf-e2-3) |
-| Carômetro | `298-1202` | programas (grade de participantes) | [E2.6](../requisitos.md#rf-e2-6) |
+| Carômetro | `298-1202` | programas → grade de participantes (os usuários da empresa, para escolher) | [E2.6](../requisitos.md#rf-e2-6) |
 
 > **Entrada em usuários (desktop e mobile):** **"Link de cadastro"** é o botão **primário** (escuro, à direita) e **"Novo usuário"** o **secundário** (claro, com "+").
 
@@ -136,9 +136,26 @@ Fluxo de autocadastro aberto ([RF-E2.9–2.11](../requisitos.md#rf-e2-9), [E1.12
 |---|---|---|---|---|
 | Cadastro | `352-66` / `352-153` | `/cadastro/[token]` | empresa **bloqueada** (chip "via link") + nome + e-mail + telefone + `Criar conta` | [E2.10](../requisitos.md#rf-e2-10) |
 | Confirmar e-mail | `352-213` / `352-302` | `/cadastro/[token]/confirmar` | mesmo padrão do OTP + subtítulo com o e-mail + footer **"E-mail errado? Corrigir"** | [E1.12](../requisitos.md#rf-e1-12) |
-| Carômetro (1º acesso) | `355-65` / `355-214` | overlay na home / bottom-sheet | passo a passo (`PASSO 1 DE 3` + barra de progresso); passo 1 = cargo/função + área. **Sem foto; nome já vem do cadastro** | [E2.11](../requisitos.md#rf-e2-11) |
+| Carômetro (1º acesso) | `355-65` / `355-214` | overlay na home / bottom-sheet | passo a passo (`PASSO x DE y` + barra de progresso). **Sem foto; nome já vem do cadastro** | [E2.11](../requisitos.md#rf-e2-11) |
 
-- O carômetro está desenhado como **passo 1 de 3**; passos 2–3 (ex.: uma frase sobre você, área/tempo de casa) seguem o mesmo padrão de card/sheet.
+O carômetro é sobre convivência, não sobre cargo. São estes os campos, e só eles:
+
+| Campo | Tipo | Observação |
+|---|---|---|
+| Data de aniversário | data | |
+| Tamanho de camisa | `PP` · `P` · `M` · `G` · `GG` · `XGG` | lista fechada |
+| Comida favorita | texto | |
+| Tem filhos | sim/não | |
+| Quantos filhos | número | só aparece com "tem filhos" = sim |
+| O que você curte | texto livre | a pergunta mais aberta; sem categorias |
+
+- **Preenchimento parcial:** cada passo salva o que tem, e sair no meio não perde o anterior. A api
+  expõe isso em `PATCH /perfil` — campo ausente fica como está, campo enviado como `null` apaga.
+- **`completedAt`** só é preenchido quando não falta nenhuma resposta, e é por ele que a tela decide
+  se ainda conduz o preenchimento. Editar depois não move a data.
+- **Quem edita:** a própria pessoa em `/perfil` e o admin em
+  `/empresas/:id/usuarios/:userId/perfil`. Serve ao modal de hoje e à página de perfil que vier
+  depois — a rota não sabe de tela.
 - Mobile: cadastro reusa o layout split (trilhos + borboletas); carômetro é bottom-sheet com grabber.
 
 ## E-mails · `nuree / emails`
@@ -151,7 +168,8 @@ Fluxo de autocadastro aberto ([RF-E2.9–2.11](../requisitos.md#rf-e2-9), [E1.12
 
 - **Auth passwordless por código:** requisitos já atualizados ([RF-E1.4/1.5/1.8](../requisitos.md#rf-e1-4), [E2.2](../requisitos.md#rf-e2-2)); não há mais senha nem "troca no 1º acesso". Reexportar as imagens de [Diagramas](../arquitetura/diagramas.md) a partir dos `.drawio` (rótulo de Auth já corrigido para "código OTP").
 - **Estados de auth a desenhar:** código inválido, código expirado, loading e reenvio com contador (ver tabela de Auth). Valem também para a tela de confirmar e-mail.
-- **Carômetro:** só o passo 1 está desenhado; definir os campos dos passos 2–3.
+- **Carômetro:** os campos estão definidos (ver tabela em *Cadastro por link*) e implementados na
+  api; falta desenhar os passos além do primeiro e decidir como os campos se distribuem entre eles.
 - **Ajuste pendente:** o placeholder do campo telefone no *sheet* mobile de Novo usuário ainda mostra e-mail (é sublayer do componente `input`; ajustar no master).
 - **Rotas** acima são sugestão; confirmar antes de fixar a árvore de pastas.
 - **Ids do Figma** podem mudar com a edição do arquivo; na dúvida, localize pelo nome do frame.
