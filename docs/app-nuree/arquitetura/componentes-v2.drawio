@@ -11,7 +11,7 @@
         <mxCell id="contas" value="&lt;b&gt;Contas &amp;amp; Contratos&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:9px;color:#5A6B7B;'&gt;E1 · E2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;align=center;fontSize=13;fontStyle=1;spacingTop=6;fillColor=#EEF3F8;strokeColor=#2A4B6B;strokeWidth=1.5;" parent="1" vertex="1">
           <mxGeometry x="60" y="40" width="340" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="ct_auth" value="&lt;b&gt;Autenticação&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:9px;color:#8899AA;'&gt;sessão · OAuth · troca de senha — RF-E1.4·1.8–1.11&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2A4B6B;fontSize=11;align=left;spacingLeft=8;verticalAlign=middle;" parent="contas" vertex="1">
+        <mxCell id="ct_auth" value="&lt;b&gt;Autenticação&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:9px;color:#8899AA;'&gt;sessão · OAuth · código OTP — RF-E1.4·1.8–1.11&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2A4B6B;fontSize=11;align=left;spacingLeft=8;verticalAlign=middle;" parent="contas" vertex="1">
           <mxGeometry x="20" y="48" width="300" height="34" as="geometry" />
         </mxCell>
         <mxCell id="ct_cad" value="&lt;b&gt;Cadastro organizacional&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:9px;color:#8899AA;'&gt;engloba Empresa · Usuário · Programa/Participação · Produto — RF-E1.1–1.3·E2.1–2.8&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2A4B6B;fontSize=11;align=left;spacingLeft=8;verticalAlign=middle;" parent="contas" vertex="1">
