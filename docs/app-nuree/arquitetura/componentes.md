@@ -14,7 +14,7 @@ rotas/UI em PT ([RNF-5](../requisitos.md#rnf-5)). Estilo e porquê no
 
 | Módulo | O que é · engloba | Ações | RF |
 |---|---|---|---|
-| **`Auth`** | Autenticação / identidade | autenticar (e-mail+senha, OAuth Google, vincular identidade); troca de senha no 1º acesso; logout/expiração; papel (Admin/Cliente) | [E1.4](../requisitos.md#rf-e1-4), 1.5, 1.8–1.11, 1.4a |
+| **`Auth`** | Autenticação / identidade | autenticar (e-mail+código OTP, OAuth Google, vincular identidade); emissão/expiração de código; logout/expiração; papel (Admin/Cliente) | [E1.4](../requisitos.md#rf-e1-4), 1.5, 1.8–1.11, 1.4a |
 | **`Account`** | Cadastro / tenancy · *Empresa·Usuário·Programa/Participação·Produto* | catálogo de Produtos; Programas (contratos isolados) e matrícula; CRUD empresas/usuários; alternar contexto; convite | [E1.1](../requisitos.md#rf-e1-1)–1.3, E2.1–2.3, 2.5, 2.8 |
 | **`Form`** | Motor genérico de formulários | CRUD de formulários e campos; atribuir a contexto com prazo; responder (rascunho+envio); registrar resposta e emitir evento | [E4.1](../requisitos.md#rf-e4-1)–4.5 |
 | **`Diagnostic`** | Diagnóstico de maturidade | montar por dimensão (escala 1–5, *reusa `Form`*); calcular maturidade e exibir; gerar plano → cria `Task` | [E10.1](../requisitos.md#rf-e10-1)–10.3 |

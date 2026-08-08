@@ -6,6 +6,10 @@ repo_name: nureeNegocios/docs
 edit_uri: edit/main/docs/
 copyright: Nuree Negócios
 
+# Referência de marca fora da navegação do site (linkada só pelo handoff).
+not_in_nav: |
+  /app-nuree/design.md
+
 theme:
   name: material
   language: pt-BR
@@ -63,6 +67,8 @@ nav:
       - Visão geral: app-nuree/index.md
       - Requisitos: app-nuree/requisitos.md
       - Ações do sistema: app-nuree/acoes.md
+      - Iteração 1:
+          - Handoff de telas: app-nuree/iteration-1/handoff-telas.md
       - Arquitetura:
           - Decisões:
             - Cararcterísticas de Arquitetura: app-nuree/arquitetura/decisoes/0001-caracteristicas.md

@@ -21,7 +21,7 @@ O participante matriculado num programa. Tudo que faz é preso ao seu escopo.
 
 | Grupo | Ações | Requisitos |
 |---|---|---|
-| Acesso | Autenticar, trocar senha, sair | E1 |
+| Acesso | Autenticar (código), sair | E1 |
 | Tarefas | Criar, editar, mover de estado, excluir; gerir subtarefas; alternar visões (lista/kanban/calendário) | E3 |
 | Formulários | Responder formulário atribuído (Mergulho, tarefa de casa, assessment/PDI, quiz) | E4 |
 | Mentoria | Ver disponibilidade, agendar sessão, transferir a colega da empresa, ver a linha do tempo | E5 |
@@ -42,7 +42,7 @@ Opera e **configura os motores sem depender do dev**. Transita entre empresas/pr
 
 | Grupo | Ações | Requisitos |
 |---|---|---|
-| Tenancy | CRUD de empresas, usuários (papel, reset de senha) e programas; matricular clientes com pacote; alternar contexto ativo | E1, E2 |
+| Tenancy | CRUD de empresas, usuários (papel, reenvio de acesso) e programas; matricular clientes com pacote; alternar contexto ativo | E1, E2 |
 | Acompanhamento | Ver painéis por programa e por pessoa; clonar/reaplicar templates | E2 |
 | Ciclos & tarefas | CRUD de ciclos, encerrar ciclo (rollover), templates de ciclo; mesmas ações de tarefa do cliente | E3 |
 | Form builder | CRUD de formulários e campos; atribuir a contexto com prazo; configurar quiz (gabarito, pontuação) | E4 |
