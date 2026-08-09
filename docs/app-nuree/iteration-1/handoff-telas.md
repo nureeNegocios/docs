@@ -16,7 +16,16 @@ Estas telas cobrem a **Iteração 1** do roadmap, entregue como dois épicos no 
 - **[#3 · E1 — Login, papéis e acesso por empresa/programa](https://github.com/nureeNegocios/app/issues/3)** — telas de **Auth** + **Home**.
 - **[#4 · E2 — Administrar empresas, usuários e programas](https://github.com/nureeNegocios/app/issues/4)** — **console admin** + **cadastro por link**.
 
-Os épicos englobam **backend e frontend**. Este handoff é a especificação do **frontend**: telas **pixel-perfect** sobre o design system, prontas para implementar direto a partir dele. Ao ligar as telas, consuma a API e confirme os contratos/rotas reais; não recrie lógica de domínio no front.
+Os épicos englobam **backend e frontend**. Este handoff é a especificação do **frontend**: telas **pixel-perfect** sobre o design system, prontas para implementar direto a partir dele.
+
+!!! danger "Regra de ouro: a tela é o Figma, não a sua interpretação dele"
+    **Cada tela implementada tem que ficar idêntica ao frame.** Não é "inspirada em", não é "equivalente": é a mesma tela. Abra o node, meça, e reproduza.
+
+    **Não invente nada.** Nada de campo a mais, coluna a mais, botão a mais, estado vazio improvisado, ícone trocado, cor "parecida", espaçamento "que ficou melhor", texto reescrito ou ordem de campos alterada. Se está no frame, existe; se não está, não existe.
+
+    Isso vale inclusive quando o desenho parecer errado ou incompleto. **Divergência não se resolve codando** — se algo não fecha (o frame pede um dado que a API não tem, um estado não foi desenhado, dois frames se contradizem), **pare e pergunte**. Um palpite implementado vira retrabalho nas duas pontas: refazer o código e refazer o Figma.
+
+    Toda copy sai do frame, letra por letra. Toda medida sai da escala Fibonacci abaixo. Todo ícone é o Lucide indicado. O que não estiver desenhado — hover, foco, loading, erro, lista vazia — **pergunte antes**, não preencha por conta.
 
 !!! warning "Os critérios de #3/#4 ainda citam senha"
     Os checklists das issues nasceram antes da decisão de **auth passwordless por código (OTP)**. Onde lê "e-mail e senha", "reset de senha" ou "troca de senha no primeiro acesso", vale o modelo atual dos [Requisitos](../requisitos.md#rf-e1-4): código OTP + confirmação de e-mail.
@@ -54,6 +63,83 @@ Fonte única da marca: [Diretrizes de Design](../design.md). Resumo operável (v
 - **Idioma:** rotas, domínio e copy em PT ([RNF-5](../requisitos.md)). Domínio em PT: `Empresa`, `Usuario`, `Programa`, `Ciclo`, `entrar`, `sair`.
 - **Copy:** acolhedora, minúscula, metáforas leves de florescimento; sem travessão; sem frases-aplauso.
 - **Responsivo:** cada tela abaixo tem par desktop + mobile — **é uma tela só, dois breakpoints**, não telas distintas.
+
+## API · como ligar as telas
+
+A api está implementada e é a fonte do contrato. **O Swagger é a referência viva**, não este documento: `http://localhost:3000/documentacao` (só fora de produção). Se algo aqui divergir do Swagger, o Swagger vence.
+
+Nada de lógica de domínio no front: o back já decide papel, escopo, unicidade e situação. O front pede e desenha.
+
+### Sessão
+
+A sessão vive em **dois cookies `httpOnly`** e **nunca no corpo da resposta** — não há token para guardar em `localStorage`, e JavaScript não consegue lê-los, o que é de propósito.
+
+- Toda chamada vai com **`credentials: 'include'`**. Sem isso o login "funciona" e a próxima chamada volta 401.
+- A origem do front precisa estar em `CORS_ORIGINS` no `.env` da api.
+- `401` numa chamada qualquer significa access token expirado: chame `POST /auth/atualizar` e repita a original. Se o refresh também falhar, mande para `/entrar`.
+- `403` é escopo ou papel — **não** tente refresh, e não esconda: é bug de navegação se acontecer numa tela que o usuário deveria alcançar.
+
+| Rota | Uso |
+|---|---|
+| `POST /auth/codigo` | pede o código. **Responde 204 exista a conta ou não**, e leva o mesmo tempo nos dois casos: a tela segue para o passo do código sem checar nada. Reenvio dentro de 60s não gera código novo |
+| `POST /auth/entrar` | `{ email, codigo }` → abre a sessão. Acertar o código também confirma o e-mail |
+| `POST /auth/google` | `{ credencial }` — o ID token que o SDK do Google entrega ao navegador |
+| `POST /auth/atualizar` | rotaciona a sessão |
+| `POST /auth/sair` | encerra |
+| `GET /auth/eu` | usuário da sessão |
+
+### Listagens
+
+**Toda listagem pagina, busca e filtra no servidor.** Não traga a coleção inteira para filtrar em memória — nem por conveniência, nem "porque são poucos".
+
+Resposta: `{ items, total, page, pageSize }`. Query em português: `?pagina=2&tamanho=20&busca=ana`, mais os filtros de cada rota. O `total` é o que alimenta o paginador numerado.
+
+| Rota | Filtros | Alimenta |
+|---|---|---|
+| `GET /empresas` | `busca`, `status=ativas\|inativas\|todas` | aba **Empresas**. Cada item traz `programCount` e `userCount` |
+| `GET /usuarios` | `busca` (nome ou e-mail), `papel`, `ativo` | aba **Usuários** — atravessa empresas, e cada item traz `companyName` |
+| `GET /programas` | `busca`, `produto`, `ativo` | aba **Programas** — cada item traz `companyName` e `enrollmentCount` |
+| `GET /programas/:id/participacoes` | `busca` | grade de participantes; cada item traz `userName` e `userEmail` |
+| `GET /empresas/:id/usuarios` · `/programas` | os mesmos | as mesmas listas, presas a uma empresa |
+
+!!! important "Situação é derivada, não é campo"
+    Não existe coluna `status` no banco, e a API não devolve uma. A tela calcula:
+
+    - **Usuário:** `active` + `emailConfirmedAt` → *Ativo*; `active` sem `emailConfirmedAt` → *Convite pendente*; `active: false` → *Inativo*.
+    - **Empresa:** `active` → *Ativa* / *Inativa*.
+    - **Programa:** `active` com `endsAt` no passado → *Encerrado*.
+
+### Escrever
+
+Ler atravessa empresas; **escrever é sempre pela empresa**, porque criar usuário ou programa exige dizer de qual empresa ele é.
+
+| Ação | Rota |
+|---|---|
+| Nova empresa · editar · desativar | `POST /empresas` · `PATCH` · `DELETE /empresas/:id` |
+| Novo usuário (dispara convite) | `POST /empresas/:id/usuarios` — `sendInvite: false` cadastra sem avisar |
+| Editar papel · desativar | `PATCH` · `DELETE /empresas/:id/usuarios/:userId` |
+| Reenviar acesso | `POST /empresas/:id/usuarios/:userId/reenviar-acesso` → 202 |
+| Novo programa (passo 1) | `POST /empresas/:id/programas` — **o nome não vai no corpo**, é gerado |
+| Matricular (passo 2) | `POST /programas/:id/participacoes` |
+| Link de cadastro | `POST · GET · DELETE /empresas/:id/link-cadastro` — devolve a URL pronta; **a api não envia o link**, o admin copia e distribui |
+| Carômetro | `GET · PATCH /perfil` (o próprio) · `GET · PATCH /empresas/:id/usuarios/:userId/perfil` (pelo admin) |
+| Contexto ativo | `GET /contextos` · `GET · PUT · DELETE /contextos/ativo` |
+
+- **Desativar é soft** ([RNF-9](../requisitos.md)): a linha some da lista e o cadastro continua. A tela de detalhe ainda abre, para reativar com `PATCH { active: true }`.
+- **Carômetro grava parcial:** manda-se o passo, não o formulário inteiro. Campo ausente fica como está; campo enviado como `null` apaga. `completedAt` nulo é o sinal de que ainda falta responder.
+- **Cadastro por link** é público: `GET /cadastro/:token` diz de qual empresa é, `POST /cadastro/:token` cadastra. **Responde 204 tenha a pessoa conta ou não** — não mostre "e-mail já cadastrado", isso é anti-enumeração e não é negociável. Depois, siga para `/auth/codigo`.
+
+!!! warning "Errar o e-mail no autocadastro se corrige refazendo o cadastro"
+    O botão "E-mail errado? Corrigir" **volta ao formulário de cadastro**, não pede outro código. `/auth/codigo` com e-mail sem conta responde 204 e não envia nada — a pessoa esperaria para sempre.
+
+### O que ainda não existe na api
+
+Estas telas **não têm backend** e não devem ser ligadas a nada inventado — se entrarem na iteração, entram com dado estático e combinado, nunca com endpoint imaginado:
+
+- **Painéis** de acompanhamento por programa e por pessoa ([E2.6](../requisitos.md#rf-e2-6)).
+- **Biblioteca de mídia** e hub de construtores ([E2.4](../requisitos.md#rf-e2-4)).
+- **Clonar/reaplicar template** a outro programa ([E2.7](../requisitos.md#rf-e2-7)).
+- **Ordenação por clique no cabeçalho** da tabela ([app#28](https://github.com/nureeNegocios/app/issues/28)) — a paginação e os filtros existem; ordenar escolhendo a coluna, ainda não.
 
 ## Auth · `nuree / auth`
 
