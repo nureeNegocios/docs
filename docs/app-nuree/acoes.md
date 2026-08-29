@@ -23,6 +23,7 @@ O participante matriculado num programa. Tudo que faz é preso ao seu escopo.
 |---|---|---|
 | Acesso | Autenticar (código), sair | E1 |
 | Tarefas | Criar, editar, mover de estado, excluir; gerir subtarefas; alternar visões (lista/kanban/calendário) | E3 |
+| Rotinas | CRUD da matriz de rotinas e das rotinas dela (desativar, não apagar); ver a gestão à vista | E3 |
 | Formulários | Responder formulário atribuído (Mergulho, tarefa de casa, assessment/PDI, quiz) | E4 |
 | Mentoria | Ver disponibilidade, agendar sessão, transferir a colega da empresa, ver a linha do tempo | E5 |
 | Conteúdo | Consumir itens de trilha e marcar progresso | E6 |
@@ -44,7 +45,8 @@ Opera e **configura os motores sem depender do dev**. Transita entre empresas/pr
 |---|---|---|
 | Tenancy | CRUD de empresas, usuários (papel, reenvio de acesso) e programas; matricular clientes com pacote; alternar contexto ativo | E1, E2 |
 | Acompanhamento | Ver painéis por programa e por pessoa; clonar/reaplicar templates | E2 |
-| Ciclos & tarefas | CRUD de ciclos, encerrar ciclo (rollover), templates de ciclo; mesmas ações de tarefa do cliente | E3 |
+| Ciclos & tarefas | CRUD de ciclos, encerrar ciclo (rollover), templates de ciclo; definir meta de poker por pessoa; selecionar as rotinas do ciclo; mesmas ações de tarefa do cliente | E3 |
+| Ritual semanal | Ver a review do ciclo que fecha (entregue, aberto, repassado) e a capacidade da próxima (comprometido, restante, distribuição por origem) | E3 |
 | Form builder | CRUD de formulários e campos; atribuir a contexto com prazo; configurar quiz (gabarito, pontuação) | E4 |
 | Agenda do mentor | Publicar/gerir disponibilidade; confirmar sessão e registrar o combinado; cancelar sessão; conectar Google Calendar | E5 |
 | Conteúdo | CRUD de trilhas e itens; gerir biblioteca de mídia | E6 |

@@ -60,6 +60,18 @@ Protege o [RNF-5](../requisitos.md#rnf-5): rotas/UI em PT, código em EN.
 
 - Rotas expostas em português; identificadores de módulo em inglês (os nomes canônicos).
 
+## FF-8 · Complexidade ciclomática
+
+Protege a **Evolutividade** ([RNF-7](../requisitos.md#rnf-7)) — a única característica dirigente que nenhuma das outras FF alcança, porque ela não é sobre fronteira entre módulos, e sim sobre o que acontece dentro de uma função.
+
+- *Static, triggered:* nenhuma função passa de **10** de complexidade ciclomática. A medição é a regra `complexity` do ESLint, no `pnpm lint`.
+- *Continuous:* `pnpm complexity` reporta a distribuição e as dez mais complexas. O teto sozinho não mostra a codebase inteira subindo de 3 para 8 — passa no lint e mesmo assim ficou pior.
+- Um teste em [`src/fitness-functions.spec.ts`](https://github.com/nureeNegocios/api/blob/main/src/fitness-functions.spec.ts) garante que a regra e o script continuam configurados: tirá-los abriria a porteira em silêncio.
+
+**Por que 10, e por que aqui.** Nenhuma decisão de arquitetura impede uma função de virar um nó de ramificações — o quantum continua coeso, os módulos continuam donos das próprias tabelas, e a mudança fica cara mesmo assim. Dez é o valor de referência usual, e hoje é encostado por três funções: a próxima ramificação nelas obriga a separar, que é o efeito pretendido.
+
+A métrica conta `??`, `?:`, `||` e `&&`, então um montador de filtros com muitos campos opcionais pontua alto sem ser difícil de ler. Quando isso acontecer, o caminho é **dar nome ao trecho** — extrair a regra que estava implícita —, não silenciar a regra com um comentário de exceção.
+
 ## Relacionados
 
 - [Componentes](componentes.md) · [Características](caracteristicas.md) · [Diário](../../reunioes/exploracao-arquitetura-2026-08-02.md)

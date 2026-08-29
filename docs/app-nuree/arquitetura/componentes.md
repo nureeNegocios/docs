@@ -23,7 +23,7 @@ rotas/UI em PT ([RNF-5](../requisitos.md#rnf-5)). Estilo e porquê no
 | **`Recognition`** | Selos & Certificados · *critérios · concessão* | definir selos e critérios; conceder ao satisfazer o critério — artefato: selo silencioso *ou* certificado PDF; exibir | [E8.1](../requisitos.md#rf-e8-1)–8.3, E11.3 |
 | **`Scheduling`** | Agenda · *disponibilidade · slots · sessões · sync · check-in de sessão* | publicar disponibilidade/slots; agendar sessão (limite do pacote); transferir; registrar combinado; sync Google (OAuth+evento); check-in da sessão (*reusa `Form`*) | [E5.1](../requisitos.md#rf-e5-1)–5.13 |
 | **`Document`** | Repositório por empresa · *pastas · remetente* | armazenar/baixar docs no escopo (blob via `Media`); pastas; remetente (Nuree/cliente) | [E12.1](../requisitos.md#rf-e12-1)–12.5 |
-| **`Task`** | Execução · *tarefas · ciclos · rollover · templates · sementeira* | CRUD de tarefas e subtarefas; visões lista/kanban/calendário; ciclos; encerrar com rollover; templates de ciclo | [E3.1](../requisitos.md#rf-e3-1)–3.12 |
+| **`Task`** | Execução · *tarefas · ciclos · rollover · templates · sementeira · matriz de rotinas · ritual semanal* | CRUD de tarefas e subtarefas; visões lista/kanban/calendário; ciclos; encerrar com rollover; templates de ciclo; matriz de rotinas e prazo ideal por recorrência; capacidade e review do ciclo | [E3.1](../requisitos.md#rf-e3-1)–3.39 |
 
 ## Assíncrono
 
