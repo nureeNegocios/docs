@@ -55,7 +55,7 @@ Base de acompanhamento (já em produção); passa a pertencer ao Programa. CRUD 
 
 | ID | Requisito | Ator | Prioridade | Depende de | Fonte | Verificação |
 |---|---|---|---|---|---|---|
-| <a id="rf-e3-1">RF-E3.1</a> | Quando um usuário cria uma tarefa, o sistema deve exigir o título; o responsável assume o criador e o status assume "a fazer" por padrão. | Cliente | Alta | [RF-E1.6](#rf-e1-6) | Existente | Criar tarefa só com título; responsável = criador, status = a fazer. |
+| <a id="rf-e3-1">RF-E3.1</a> | Quando um usuário cria uma tarefa, o sistema deve exigir o título; a tarefa nasce **sem responsável** e o status assume "a fazer" por padrão. | Cliente | Alta | [RF-E1.6](#rf-e1-6) | Existente | Criar tarefa só com título; sem responsável, status = a fazer. |
 | <a id="rf-e3-2">RF-E3.2</a> | O sistema deve permitir editar título, responsável, situação, descrição, ciclo, prazo e poker de uma tarefa. | Cliente | Alta | [RF-E3.1](#rf-e3-1) | Existente · Figma `overlay/editar-tarefa` | Alterar cada campo e persistir. |
 | <a id="rf-e3-3">RF-E3.3</a> | O sistema deve permitir excluir uma tarefa, removendo também suas subtarefas. | Cliente | Alta | [RF-E3.1](#rf-e3-1) | Inferência | Excluir tarefa a remove com suas subtarefas. |
 | <a id="rf-e3-4">RF-E3.4</a> | O sistema deve permitir mover uma tarefa entre os estados a fazer, fazendo e feita. | Cliente | Alta | [RF-E3.1](#rf-e3-1) | Existente | Mover a tarefa pelos três estados. |

@@ -41,7 +41,7 @@ convite de `Account` ([E2.8](../requisitos.md#rf-e2-8)).
 
 | | Papel | RF |
 |---|---|---|
-| **`Media`** | armazenar/servir blobs via presigned URL (MinIO) | [E6.2](../requisitos.md#rf-e6-2), E11.3 |
+| **`Media`** | armazenar/servir blobs via presigned URL (MinIO) — *implementado* em `src/infra/media/`; consumido hoje pelo logo de empresa ([E2.1](../requisitos.md#rf-e2-1)) e pelo anexo de resposta ([E4.1](../requisitos.md#rf-e4-1)) | [E6.2](../requisitos.md#rf-e6-2), E11.3 |
 | **`Scope`** | JWT/RBAC, rate limit, CORS, validação; prende toda query ao escopo | [RNF-3](../requisitos.md#rnf-3), [E1.6](../requisitos.md#rf-e1-6)/1.7, [RNF-2](../requisitos.md#rnf-2) |
 | **`Reporting`** | *read-model* dos painéis por Programa/Pessoa — só lê `Task`/`Journey`/`Scheduling`/`Recognition` | [E2.6](../requisitos.md#rf-e2-6) |
 

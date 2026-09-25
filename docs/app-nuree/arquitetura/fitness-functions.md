@@ -38,6 +38,13 @@ Protege a decisão de não servir blob no backend.
 
 - Nenhum handler retorna o corpo de um arquivo — só URL pré-assinada (com expiração).
 
+*Verificada* em `src/fitness-functions.spec.ts`, em três checagens estáticas: só `src/infra/media/`
+importa o SDK do S3; nenhum controller devolve `StreamableFile` nem escreve na resposta com `@Res()`;
+e toda chamada a `getSignedUrl` passa `expiresIn`.
+
+O CSV de respostas fica de fora de propósito: devolve `string` gerada na hora a partir do banco, e
+não blob armazenado — é o segundo que a FF-4 protege.
+
 ## FF-5 · Integrações e jobs fora do request
 
 Protege a Confiabilidade — async só no worker.
