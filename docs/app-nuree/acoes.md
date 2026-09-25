@@ -48,7 +48,7 @@ Opera e **configura os motores sem depender do dev**. Transita entre empresas/pr
 | Ciclos & tarefas | CRUD de ciclos, encerrar ciclo (rollover), templates de ciclo; definir meta de poker por pessoa; selecionar as rotinas do ciclo; mesmas ações de tarefa do cliente | E3 |
 | Ritual semanal | Ver a review do ciclo que fecha (entregue, aberto, repassado) e a capacidade da próxima (comprometido, restante, distribuição por origem) | E3 |
 | Form builder | CRUD de formulários e campos; atribuir a contexto com prazo; configurar quiz (gabarito, pontuação) | E4 |
-| Agenda do mentor | Publicar/gerir disponibilidade; confirmar sessão e registrar o combinado; cancelar sessão; conectar Google Calendar | E5 |
+| Agenda do mentor | Definir regras de disponibilidade (recorrência, vigência, público, cota por pessoa, intervalo mínimo); ajustar ocorrências em dias especiais; confirmar sessão e registrar o combinado; cancelar sessão; acompanhar quem já agendou e quanto falta; dimensionar quantos slots abrir; conectar Google Calendar | E5 |
 | Conteúdo | CRUD de trilhas e itens; gerir biblioteca de mídia | E6 |
 | Jornada builder | Montar jornadas com etapas; anexar formulário/trilha/selo a cada etapa | E7 |
 | Selos builder | Definir selos e seus critérios de concessão | E8 |
