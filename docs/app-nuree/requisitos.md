@@ -161,6 +161,8 @@ Motor único de formulários, reusado por Mergulho, tarefas de casa, assessment/
 
 Auto-agendamento com regras + registro do que foi combinado. A gestão das sessões e da disponibilidade é do admin (o mentor).
 
+No console, essa regra é o objeto que o admin cria e publica, e a interface a chama de **agendamento** ([RNF-5](#rnf-5)); o que o cliente faz numa vaga publicada é **agendar uma sessão**. Os requisitos abaixo usam "regra de disponibilidade" para o objeto e "agendar" para o ato, para que os dois não se confundam.
+
 A oferta não é uma lista de horários solta: nasce de **regras de disponibilidade** ([RF-E5.14](#rf-e5-14)) — recorrência com vigência, público, cota por pessoa e intervalo mínimo entre sessões da mesma pessoa. Dois grupos do mesmo treinamento podem ter regras diferentes, e é a regra que decide o que cada participante enxerga na grade. Onde a participação também trouxer limite de pacote ([RF-E1.3](#rf-e1-3)), vale o menor dos dois limites. Cada slot atende uma pessoa: a mentoria é individual.
 
 | ID | Requisito | Ator | Prioridade | Depende de | Fonte | Verificação |
