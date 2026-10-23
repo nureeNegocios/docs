@@ -27,7 +27,7 @@ Sistema da Nuree Negócios. Plataforma multi-produto composta de **módulos comp
 | Proxy / deploy | Caddy · Docker Compose |
 | Auth | JWT (access+refresh) + Google OAuth |
 | E-mail | Resend (transacional: código OTP, convite, link de cadastro) |
-| Integrações | WhatsApp *(provider a decidir)* · Google (OAuth + Calendar) · Resend (e-mail) |
+| Integrações | WhatsApp *(Baileys, atrás de uma porta — [ADR 4](arquitetura/decisoes/0004-whatsapp.md))* · Google (OAuth + Calendar) · Resend (e-mail) |
 
 ## Em breve
 
